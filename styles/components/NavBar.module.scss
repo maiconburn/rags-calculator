@@ -1,0 +1,46 @@
+a.buttonActive {
+  color: #333;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+a:hover.buttonActive {
+  opacity: 0.8;
+}
+
+a.buttonActiveInternal {
+  color: #000 !important;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+a:hover.buttonActiveInternal {
+  border: 1px solid #000 !important;
+  opacity: 0.8;
+}
+
+a.buttonGetStarted {
+  border: 1px solid #333 !important;
+  color: #333 !important;
+  height: "35px";
+  margin: "7px 5px";
+  border-radius: "5px";
+  margin-left: 20px;
+}
+
+a:hover.buttonGetStarted {
+  opacity: 0.8;
+}
+
+a.buttonCalculate {
+  border: 1px solid rgb(248, 133, 2) !important;
+  color: rgb(248, 133, 2) !important;
+  height: "35px";
+  margin: "7px 5px";
+  border-radius: "5px";
+  margin-left: 20px !important;
+}
+
+a:hover.buttonCalculate {
+  opacity: 0.8;
+}
