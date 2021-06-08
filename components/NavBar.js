@@ -70,11 +70,7 @@ export default function NavBar() {
     >
       <MenuItem>
         <ButtonMobileActive
-          className={
-            router.asPath == "/" || router.asPath == "/screening"
-              ? styles.buttonMobileActive
-              : styles.buttonMobileActive
-          }
+          className={styles.buttonMobileActive}
           color="inherit"
           href="/info"
         >

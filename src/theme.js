@@ -4,8 +4,11 @@ import "fontsource-roboto";
 
 const defaultTheme = createMuiTheme({
   palette: {
-    primary: {
+    base: {
       main: "#FFF",
+    },
+    primary: {
+      main: "#333",
     },
     secondary: {
       main: "#000",

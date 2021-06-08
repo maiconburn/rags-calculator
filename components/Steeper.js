@@ -11,23 +11,18 @@ export default function Stepper(props) {
   const router = useRouter();
   const theme = useTheme();
 
-  console.log(props.actualStep);
-
-  const lastStep = props.actualStep - 1;
-  const nextStep = props.actualStep + 1;
-
-  const [activeStep, setActiveStep] = React.useState();
+  const [activeStep, setActiveStep] = React.useState(props.actualStep);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    router.push("/screening/?currentQuestion=" + nextStep, {
+    router.push(props.nextStep, {
       shallow: true,
     });
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    router.push("/screening/?currentQuestion=" + lastStep, {
+    router.push(props.previousStep, {
       shallow: true,
     });
   };
@@ -44,7 +39,7 @@ export default function Stepper(props) {
           size="large"
           onClick={handleNext}
           color="primary"
-          disabled={true}
+          disabled={activeStep === props.stepsNumber - 1}
         >
           Next
           {theme.direction === "rtl" ? (

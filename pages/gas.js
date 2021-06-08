@@ -1,18 +1,18 @@
 import React from "react";
-import NumberOfPeople from "../components/questions/NumberOfPeople";
 import NavBar from "../components/NavBar";
+import Gas from "../components/questions/Gas";
 import Stepper from "../components/Steeper";
 
-export default function Index() {
+export default function PageGas() {
   return (
     <div>
       <NavBar />
-      <NumberOfPeople />
+      <Gas />
       <Stepper
         stepsNumber={10}
-        actualStep={0}
-        nextStep="electricity"
-        previousStep="/"
+        actualStep={2}
+        nextStep="zebu"
+        previousStep="electricity"
       />
     </div>
   );
