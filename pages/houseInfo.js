@@ -1,32 +1,22 @@
 import React from "react";
 import NavBar from "../components/NavBar";
+import Stepper from "../components/Steeper";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
+import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
-import Stepper from "../components/Steeper";
 export default function houseInfo() {
   const [SourceEnergy, setSourceEnergy] = React.useState("electricity");
-
-  const [state, setState] = React.useState({
-    size: "",
-    name: "hai",
-  });
+  const [HouseSize, setHouseSize] = React.useState("small");
 
   const handleSourceEnergy = (event, newSourceEnergy) => {
     setSourceEnergy(newSourceEnergy);
   };
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    });
+  const handleHouseSize = (event, newHouseSize) => {
+    setHouseSize(newHouseSize);
   };
 
   return (
@@ -86,34 +76,37 @@ export default function houseInfo() {
           </Grid>
         </Box>
         <Box my="2rem">
-          <Grid
-            container
-            direction="column"
-            alignItems="center"
-            justify="center"
+          <ToggleButtonGroup
+            value={HouseSize}
+            exclusive
+            onChange={handleHouseSize}
+            aria-label="text alignment"
           >
-            <FormControl variant="outlined">
-              <InputLabel htmlFor="outlined-age-native-simple">
-                Residence size
-              </InputLabel>
-              <Select
-                native
-                value={state.size}
-                onChange={handleChange}
-                label="Select one option"
-                inputProps={{
-                  name: "size",
-                  id: "outlined-age-native-simple",
-                }}
+            <Tooltip title="2 rooms" aria-label="add">
+              <ToggleButton value="small" size="large" aria-label="Small">
+                Small
+              </ToggleButton>
+            </Tooltip>
+            <Tooltip title="Add" aria-label="add">
+              <ToggleButton value="medium" size="large" aria-label="Medium">
+                Medium
+              </ToggleButton>
+            </Tooltip>
+            <Tooltip title="Add" aria-label="add">
+              <ToggleButton value="large" size="large" aria-label="Large">
+                Large
+              </ToggleButton>
+            </Tooltip>
+            <Tooltip title="Add" aria-label="add">
+              <ToggleButton
+                value="halls"
+                size="large"
+                aria-label="Halls of residence"
               >
-                <option aria-label="None" value="" />
-                <option value={3000}>Small</option>
-                <option value={4800}>Medium</option>
-                <option value={7000}>Large</option>
-                <option value={2000}>Student Halls</option>
-              </Select>
-            </FormControl>
-          </Grid>
+                Student Halls
+              </ToggleButton>
+            </Tooltip>
+          </ToggleButtonGroup>
         </Box>
         <Grid item xs={12}>
           <Stepper
