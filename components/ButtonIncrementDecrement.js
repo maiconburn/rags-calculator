@@ -14,7 +14,7 @@ export default function ButtonIncrementDecrement() {
   };
 
   const handleDecrement = () => {
-    setCounter((counter) => counter - 1);
+    setCounter((counter) => (counter > 1 ? counter - 1 : (counter = counter)));
   };
   return (
     <Grid container>

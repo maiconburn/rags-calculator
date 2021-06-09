@@ -108,7 +108,7 @@ export default function NavBar() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
+              color="primary"
             >
               <MoreIcon />
             </IconButton>

@@ -9,7 +9,7 @@ export default function NumberOfPeople() {
       <Box>
         <Grid container direction="column" alignItems="center" justify="center">
           <Grid item>
-            <Typography variant="h4">
+            <Typography variant="h4" align="center">
               How many people are there in your household?
             </Typography>
           </Grid>
