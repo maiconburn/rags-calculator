@@ -6,7 +6,7 @@ import ButtonIncrementDecrement from "../components/ButtonIncrementDecrement";
 import NavBar from "../components/NavBar";
 import Stepper from "../components/Steeper";
 
-export default function Index() {
+export default function Cars() {
   return (
     <div>
       <NavBar />
@@ -14,7 +14,7 @@ export default function Index() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h4" align="center">
-              How many people are there in your household?
+              How many cars are used by your household?
             </Typography>
           </Box>
         </Grid>
@@ -26,9 +26,9 @@ export default function Index() {
         <Grid item xs={12}>
           <Stepper
             stepsNumber={10}
-            actualStep={0}
-            nextStep="houseInfo"
-            previousStep="/"
+            actualStep={2}
+            nextStep="food"
+            previousStep="houseInfo"
           />
         </Grid>
       </Grid>

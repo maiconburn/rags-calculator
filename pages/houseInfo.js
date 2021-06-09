@@ -98,7 +98,7 @@ export default function houseInfo() {
               </InputLabel>
               <Select
                 native
-                value={state.age}
+                value={state.size}
                 onChange={handleChange}
                 label="Select one option"
                 inputProps={{
@@ -119,7 +119,7 @@ export default function houseInfo() {
           <Stepper
             stepsNumber={10}
             actualStep={1}
-            nextStep="gas"
+            nextStep="cars"
             previousStep="/"
           />
         </Grid>
