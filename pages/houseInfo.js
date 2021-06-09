@@ -83,7 +83,6 @@ export default function houseInfo() {
             onChange={handleHouseSize}
             aria-label="House size"
           >
-<<<<<<< HEAD
             <ToggleButton value="small" size="large" aria-label="Small">
               <Tooltip title="1 Room" aria-label="add">
                 <span>Small</span>
@@ -102,7 +101,6 @@ export default function houseInfo() {
               </Tooltip>
             </ToggleButton>
 
-=======
             <Tooltip title="1 Room" aria-label="add">
               <ToggleButton value="small" size="large" aria-label="Small">
                 Small
@@ -118,19 +116,15 @@ export default function houseInfo() {
                 Large
               </ToggleButton>
             </Tooltip>
->>>>>>> 3b2d696ec77dbbee546d1978e648adf33c8f9b48
             <ToggleButton
               value="halls"
               size="large"
               aria-label="Halls of residence"
             >
-<<<<<<< HEAD
               <Tooltip title="Add" aria-label="add">
                 <span>Halls of residence</span>
               </Tooltip>
-=======
               Student Halls
->>>>>>> 3b2d696ec77dbbee546d1978e648adf33c8f9b48
             </ToggleButton>
           </ToggleButtonGroup>
         </Box>
