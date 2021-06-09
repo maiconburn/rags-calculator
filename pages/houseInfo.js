@@ -92,17 +92,20 @@ export default function houseInfo() {
                 Medium
               </ToggleButton>
             </Tooltip>
-
-            <ToggleButton value="large" size="large" aria-label="Large">
-              Large
-            </ToggleButton>
-            <ToggleButton
-              value="halls"
-              size="large"
-              aria-label="Halls of residence"
-            >
-              Halls of residence
-            </ToggleButton>
+            <Tooltip title="Add" aria-label="add">
+              <ToggleButton value="large" size="large" aria-label="Large">
+                Large
+              </ToggleButton>
+            </Tooltip>
+            <Tooltip title="Add" aria-label="add">
+              <ToggleButton
+                value="halls"
+                size="large"
+                aria-label="Halls of residence"
+              >
+                Halls of residence
+              </ToggleButton>
+            </Tooltip>
           </ToggleButtonGroup>
         </Box>
         <Grid item xs={12}>
