@@ -42,7 +42,7 @@ export default function houseInfo() {
             justify="center"
           >
             <Grid item>
-              <Typography variant="h5">
+              <Typography variant="h5" align="center">
                 How much electricity is used in your household?
               </Typography>
             </Grid>
@@ -79,7 +79,7 @@ export default function houseInfo() {
             justify="center"
           >
             <Grid item>
-              <Typography variant="h5">
+              <Typography variant="h5" align="center">
                 How much electricity is used in your household?
               </Typography>
             </Grid>
