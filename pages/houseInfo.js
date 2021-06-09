@@ -97,15 +97,13 @@ export default function houseInfo() {
                 Large
               </ToggleButton>
             </Tooltip>
-            <Tooltip title="Add" aria-label="add">
-              <ToggleButton
-                value="halls"
-                size="large"
-                aria-label="Halls of residence"
-              >
-                Student Halls
-              </ToggleButton>
-            </Tooltip>
+            <ToggleButton
+              value="halls"
+              size="large"
+              aria-label="Halls of residence"
+            >
+              Student Halls
+            </ToggleButton>
           </ToggleButtonGroup>
         </Box>
         <Grid item xs={12}>
