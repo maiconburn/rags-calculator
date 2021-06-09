@@ -12,7 +12,7 @@ export default function PageGas() {
         stepsNumber={10}
         actualStep={2}
         nextStep="zebu"
-        previousStep="electricity"
+        previousStep="houseInfo"
       />
     </div>
   );
