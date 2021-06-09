@@ -2,24 +2,25 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
+import Tooltip from "@material-ui/core/Tooltip";
+import ToggleButton from "@material-ui/lab/ToggleButton";
+import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import Typography from "@material-ui/core/Typography";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
 import Stepper from "../components/Steeper";
 
-export default function PageGas() {
-  const [state, setState] = React.useState({
-    food: "",
-    meat: "",
-  });
+export default function Food() {
+  const [OrganicFood, setOrganicFood] = React.useState("OF-none");
+  const [Meat, setMeat] = React.useState("M-above");
+  const [FoodMiles, setFoodMiles] = React.useState("FM-little");
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    });
+  const handleOrganicFood = (event, newOrganicFood) => {
+    setOrganicFood(newOrganicFood);
+  };
+  const handleMeat = (event, newMeat) => {
+    setMeat(newMeat);
+  };
+  const handleFoodMiles = (event, newFoodMiles) => {
+    setFoodMiles(newFoodMiles);
   };
   return (
     <div>
@@ -32,34 +33,33 @@ export default function PageGas() {
             </Typography>
           </Box>
           <Box my="2rem">
-            <Grid
-              container
-              direction="column"
-              alignItems="center"
-              justify="center"
+            <ToggleButtonGroup
+              value={OrganicFood}
+              exclusive
+              onChange={handleOrganicFood}
+              aria-label="Organic Food"
             >
-              <FormControl variant="outlined">
-                <InputLabel htmlFor="outlined-age-native-simple">
-                  Organic food
-                </InputLabel>
-                <Select
-                  native
-                  value={state.food}
-                  onChange={handleChange}
-                  label="Select one option"
-                  inputProps={{
-                    name: "food",
-                    id: "outlined-age-native-simple",
-                  }}
-                >
-                  <option aria-label="None" value="" />
-                  <option value={3000}>None</option>
-                  <option value={4800}>Some</option>
-                  <option value={7000}>Most</option>
-                  <option value={2000}>All</option>
-                </Select>
-              </FormControl>
-            </Grid>
+              <ToggleButton value="OF-none" size="large" aria-label="None">
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>None</span>
+                </Tooltip>
+              </ToggleButton>
+              <ToggleButton value="OF-some" size="large" aria-label="Some">
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Some</span>
+                </Tooltip>
+              </ToggleButton>
+              <ToggleButton value="OF-most" size="large" aria-label="Most">
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Most</span>
+                </Tooltip>
+              </ToggleButton>
+              <ToggleButton value="OF-all" size="large" aria-label="All">
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>All</span>
+                </Tooltip>
+              </ToggleButton>
+            </ToggleButtonGroup>
           </Box>
         </Grid>
         <Grid item xs={12}>
@@ -69,35 +69,50 @@ export default function PageGas() {
             </Typography>
           </Box>
           <Box my="2rem">
-            <Grid
-              container
-              direction="column"
-              alignItems="center"
-              justify="center"
+            <ToggleButtonGroup
+              value={Meat}
+              exclusive
+              onChange={handleMeat}
+              aria-label="Organic Food"
             >
-              <FormControl variant="outlined">
-                <InputLabel htmlFor="outlined-age-native-simple">
-                  Meat/dairy
-                </InputLabel>
-                <Select
-                  native
-                  value={state.meat}
-                  onChange={handleChange}
-                  label="Select one option"
-                  inputProps={{
-                    name: "meat",
-                    id: "outlined-age-native-simple",
-                  }}
-                >
-                  <option aria-label="None" value="" />
-                  <option value={3000}>Above-average meat/dairy</option>
-                  <option value={4800}>Average meat/dairy</option>
-                  <option value={7000}>Below-average meat/dairy</option>
-                  <option value={2000}>Lacto-vegetarian</option>
-                  <option value={1000}>Vegan</option>
-                </Select>
-              </FormControl>
-            </Grid>
+              <ToggleButton
+                value="M-above"
+                size="large"
+                aria-label="Above-average"
+              >
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Above-average</span>
+                </Tooltip>
+              </ToggleButton>
+              <ToggleButton value="M-average" size="large" aria-label="Average">
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Average</span>
+                </Tooltip>
+              </ToggleButton>
+              <ToggleButton
+                value="M-below"
+                size="large"
+                aria-label="Below-average"
+              >
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Below-average</span>
+                </Tooltip>
+              </ToggleButton>
+              <ToggleButton
+                value="M-lacto-vegetatian"
+                size="large"
+                aria-label="Lacto-vegetarian"
+              >
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Lacto-vegetarian</span>
+                </Tooltip>
+              </ToggleButton>
+              <ToggleButton value="M-vegan" size="large" aria-label="Vegan">
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Vegan</span>
+                </Tooltip>
+              </ToggleButton>
+            </ToggleButtonGroup>
           </Box>
         </Grid>
         <Grid item xs={12}>
@@ -107,36 +122,45 @@ export default function PageGas() {
             </Typography>
           </Box>
           <Box my="2rem">
-            <Grid
-              container
-              direction="column"
-              alignItems="center"
-              justify="center"
+            <ToggleButtonGroup
+              value={FoodMiles}
+              exclusive
+              onChange={handleFoodMiles}
+              aria-label="Food Miles"
             >
-              <FormControl variant="outlined">
-                <InputLabel htmlFor="outlined-age-native-simple">
-                  Food miles
-                </InputLabel>
-                <Select
-                  native
-                  value={state.miles}
-                  onChange={handleChange}
-                  label="Select one option"
-                  inputProps={{
-                    name: "miles",
-                    id: "outlined-age-native-simple",
-                  }}
-                >
-                  <option aria-label="None" value="" />
-                  <option value={3000}>
-                    Very little (much foreign / out of season food)
-                  </option>
-                  <option value={4800}>Average</option>
-                  <option value={2000}>Above average</option>
-                  <option value={1000}>Almost all</option>
-                </Select>
-              </FormControl>
-            </Grid>
+              <ToggleButton
+                value="FM-little"
+                size="large"
+                aria-label="Very little"
+              >
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Very little</span>
+                </Tooltip>
+              </ToggleButton>
+              <ToggleButton
+                value="FM-average"
+                size="large"
+                aria-label="Average"
+              >
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Average</span>
+                </Tooltip>
+              </ToggleButton>
+              <ToggleButton
+                value="FM-above"
+                size="large"
+                aria-label="Above average"
+              >
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Above average</span>
+                </Tooltip>
+              </ToggleButton>
+              <ToggleButton value="FM-all" size="large" aria-label="Almost all">
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Almost all</span>
+                </Tooltip>
+              </ToggleButton>
+            </ToggleButtonGroup>
           </Box>
         </Grid>
         <Grid item xs={12}>

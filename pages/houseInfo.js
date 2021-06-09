@@ -12,6 +12,7 @@ export default function houseInfo() {
   const [HouseSize, setHouseSize] = React.useState("small");
 
   const handleSourceEnergy = (event, newSourceEnergy) => {
+    console.log(event);
     setSourceEnergy(newSourceEnergy);
   };
 
@@ -43,7 +44,7 @@ export default function houseInfo() {
             value={SourceEnergy}
             exclusive
             onChange={handleSourceEnergy}
-            aria-label="text alignment"
+            aria-label="Source of energy"
           >
             <ToggleButton
               value="electricity"
@@ -80,32 +81,35 @@ export default function houseInfo() {
             value={HouseSize}
             exclusive
             onChange={handleHouseSize}
-            aria-label="text alignment"
+            aria-label="House size"
           >
-            <Tooltip title="2 rooms" aria-label="add">
-              <ToggleButton value="small" size="large" aria-label="Small">
-                Small
-              </ToggleButton>
-            </Tooltip>
-            <Tooltip title="Add" aria-label="add">
-              <ToggleButton value="medium" size="large" aria-label="Medium">
-                Medium
-              </ToggleButton>
-            </Tooltip>
-            <Tooltip title="Add" aria-label="add">
-              <ToggleButton value="large" size="large" aria-label="Large">
-                Large
-              </ToggleButton>
-            </Tooltip>
-            <Tooltip title="Add" aria-label="add">
-              <ToggleButton
-                value="halls"
-                size="large"
-                aria-label="Halls of residence"
-              >
-                Halls of residence
-              </ToggleButton>
-            </Tooltip>
+            <ToggleButton value="small" size="large" aria-label="Small">
+              <Tooltip title="Test">
+                <span>Small</span>
+              </Tooltip>
+            </ToggleButton>
+
+            <ToggleButton value="medium" size="large" aria-label="Medium">
+              <Tooltip title="Add" aria-label="add">
+                <span>Medium</span>
+              </Tooltip>
+            </ToggleButton>
+
+            <ToggleButton value="large" size="large" aria-label="Large">
+              <Tooltip title="Add" aria-label="add">
+                <span>Large</span>
+              </Tooltip>
+            </ToggleButton>
+
+            <ToggleButton
+              value="halls"
+              size="large"
+              aria-label="Halls of residence"
+            >
+              <Tooltip title="Add" aria-label="add">
+                <span>Halls of residence</span>
+              </Tooltip>
+            </ToggleButton>
           </ToggleButtonGroup>
         </Box>
         <Grid item xs={12}>
