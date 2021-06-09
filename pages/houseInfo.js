@@ -33,7 +33,7 @@ export default function houseInfo() {
           >
             <Grid item>
               <Typography variant="h5" align="center">
-                How much electricity is used in your household?
+                What energy sources do you have in your household?
               </Typography>
             </Grid>
           </Grid>
@@ -70,7 +70,7 @@ export default function houseInfo() {
           >
             <Grid item>
               <Typography variant="h5" align="center">
-                How much electricity is used in your household?
+                Roughly, how big is your house?
               </Typography>
             </Grid>
           </Grid>
@@ -103,7 +103,7 @@ export default function houseInfo() {
                 size="large"
                 aria-label="Halls of residence"
               >
-                Halls of residence
+                Student Halls
               </ToggleButton>
             </Tooltip>
           </ToggleButtonGroup>
