@@ -82,17 +82,17 @@ export default function houseInfo() {
             onChange={handleHouseSize}
             aria-label="text alignment"
           >
-            <Tooltip title="2 rooms" aria-label="add">
+            <Tooltip title="1 Room" aria-label="add">
               <ToggleButton value="small" size="large" aria-label="Small">
                 Small
               </ToggleButton>
             </Tooltip>
-            <Tooltip title="Add" aria-label="add">
+            <Tooltip title="2-3 Rooms" aria-label="add">
               <ToggleButton value="medium" size="large" aria-label="Medium">
                 Medium
               </ToggleButton>
             </Tooltip>
-            <Tooltip title="Add" aria-label="add">
+            <Tooltip title="4+ Rooms" aria-label="add">
               <ToggleButton value="large" size="large" aria-label="Large">
                 Large
               </ToggleButton>
