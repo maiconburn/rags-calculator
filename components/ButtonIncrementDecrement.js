@@ -1,32 +1,42 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Input from "@material-ui/core/Input";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from "@material-ui/icons/Add";
+import RemoveIcon from "@material-ui/icons/Remove";
+import styles from "../styles/components/ButtonIncrementDecrement.module.scss";
 
-class ButtonIncrementDecrement extends React.Component {
-  state = { counter: 1 };
+export default function ButtonIncrementDecrement() {
+  const [counter, setCounter] = React.useState(1);
 
-  handleIncrement = () => {
-    this.setState((state) => ({ counter: state.counter + 1 }));
+  const handleIncrement = () => {
+    setCounter((counter) => counter + 1);
   };
 
-  handleDecrement = () => {
-    this.setState((state) => ({ counter: state.counter - 1 }));
+  const handleDecrement = () => {
+    setCounter((counter) => counter - 1);
   };
-  render() {
-    const displayCounter =
-      this.state.counter <= 0 ? (this.state.counter = 1) : this.state.counter;
-
-    return (
-      <ButtonGroup size="large" aria-label="large outlined button group">
-        <Button onClick={this.handleDecrement}>-</Button>
-        <Typography variant="h1">{displayCounter}</Typography>
-        <Input type="hidden" value={displayCounter} name="numberOfPeople" />
-        <Button onClick={this.handleIncrement}>+</Button>
-      </ButtonGroup>
-    );
-  }
+  return (
+    <Grid container>
+      <Fab
+        size="large"
+        color="secondary"
+        onClick={handleDecrement}
+        aria-label="add"
+        className={styles.ButtonIncrement}
+      >
+        <RemoveIcon />
+      </Fab>
+      <Typography className={styles.Counter}>{counter}</Typography>
+      <Fab
+        size="large"
+        color="secondary"
+        onClick={handleIncrement}
+        aria-label="add"
+        className={styles.ButtonDecrement}
+      >
+        <AddIcon />
+      </Fab>
+    </Grid>
+  );
 }
-
-export default ButtonIncrementDecrement;

@@ -1,30 +1,35 @@
 import React from "react";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
 import NumberOfPeople from "../components/questions/NumberOfPeople";
 import ButtonIncrementDecrement from "../components/ButtonIncrementDecrement";
 import NavBar from "../components/NavBar";
 import Stepper from "../components/Steeper";
-import { useForm, Controller } from "react-hook-form";
 
 export default function Index() {
-  const { control, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
   return (
     <div>
       <NavBar />
-      <NumberOfPeople />
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Controller
-          name="numberOfPeople"
-          control={control}
-          render={({ field }) => <ButtonIncrementDecrement {...field} />}
-        />
-      </form>
-      <Stepper
-        stepsNumber={10}
-        actualStep={0}
-        nextStep="electricity"
-        previousStep="/"
-      />
+      <Grid container direction="column" justify="center" alignItems="center">
+        <Grid item xs={12}>
+          <Box my="2rem">
+            <NumberOfPeople />
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Box my="3rem">
+            <ButtonIncrementDecrement />
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Stepper
+            stepsNumber={10}
+            actualStep={0}
+            nextStep="electricity"
+            previousStep="/"
+          />
+        </Grid>
+      </Grid>
     </div>
   );
 }

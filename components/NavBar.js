@@ -9,6 +9,7 @@ import Menu from "@material-ui/core/Menu";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import ButtonActive from "../components/ButtonActive";
 import ButtonMobileActive from "../components/ButtonMobileActive";
+import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import styles from "../styles/components/NavBar.module.scss";
 import { useRouter } from "next/router";
 
@@ -74,7 +75,7 @@ export default function NavBar() {
           color="inherit"
           href="/info"
         >
-          Info
+          <HelpOutlineIcon /> Info
         </ButtonMobileActive>
       </MenuItem>
     </Menu>
@@ -98,7 +99,7 @@ export default function NavBar() {
               color="inherit"
               href="/info"
             >
-              Info
+              <HelpOutlineIcon /> Info
             </ButtonActive>
           </div>
           <div className={classes.sectionMobile}>
