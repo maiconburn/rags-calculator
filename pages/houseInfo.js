@@ -43,7 +43,7 @@ export default function houseInfo() {
           >
             <Grid item>
               <Typography variant="h5" align="center">
-                How much electricity is used in your household?
+                What energy sources do you have in your household?
               </Typography>
             </Grid>
           </Grid>
@@ -80,7 +80,7 @@ export default function houseInfo() {
           >
             <Grid item>
               <Typography variant="h5" align="center">
-                How much electricity is used in your household?
+                Roughly, how big is your house?
               </Typography>
             </Grid>
           </Grid>
@@ -107,10 +107,10 @@ export default function houseInfo() {
                 }}
               >
                 <option aria-label="None" value="" />
-                <option value={3000}>Small (3,000 kWh)</option>
-                <option value={4800}>Medium (4,800 kWh)</option>
-                <option value={7000}>Large (7,000 kWh)</option>
-                <option value={2000}>Halls of Residence (2,000 kWh)</option>
+                <option value={3000}>Small</option>
+                <option value={4800}>Medium</option>
+                <option value={7000}>Large</option>
+                <option value={2000}>Student Halls</option>
               </Select>
             </FormControl>
           </Grid>
