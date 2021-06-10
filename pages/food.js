@@ -32,7 +32,7 @@ export default function Food() {
               How much of the food that you eat is organic?
             </Typography>
           </Box>
-          <Box my="2rem">
+          <Box my="2rem" display="flex" justifyContent="center">
             <ToggleButtonGroup
               value={OrganicFood}
               exclusive
