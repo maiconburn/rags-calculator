@@ -110,10 +110,10 @@ export default function Food() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              How much of your food is produced locally?
+              Do you recycle paper, glass and metal?
             </Typography>
           </Box>
-          <Box my="2rem">
+          <Box my="2rem" display="flex" justifyContent="center">
             <ToggleButtonGroup
               value={FoodMiles}
               exclusive
@@ -126,7 +126,7 @@ export default function Food() {
                 aria-label="Very little"
               >
                 <Tooltip title="2 rooms" aria-label="add">
-                  <span>Very little</span>
+                  <span>Yes</span>
                 </Tooltip>
               </ToggleButton>
               <ToggleButton
@@ -135,21 +135,41 @@ export default function Food() {
                 aria-label="Average"
               >
                 <Tooltip title="2 rooms" aria-label="add">
-                  <span>Average</span>
+                  <span>No</span>
+                </Tooltip>
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Box my="2rem">
+            <Typography variant="h5" align="center">
+              Do you recycle plastic apart from bags?
+            </Typography>
+          </Box>
+          <Box my="2rem" display="flex" justifyContent="center">
+            <ToggleButtonGroup
+              value={FoodMiles}
+              exclusive
+              onChange={handleFoodMiles}
+              aria-label="Food Miles"
+            >
+              <ToggleButton
+                value="FM-little"
+                size="large"
+                aria-label="Very little"
+              >
+                <Tooltip title="2 rooms" aria-label="add">
+                  <span>Yes</span>
                 </Tooltip>
               </ToggleButton>
               <ToggleButton
-                value="FM-above"
+                value="FM-average"
                 size="large"
-                aria-label="Above average"
+                aria-label="Average"
               >
                 <Tooltip title="2 rooms" aria-label="add">
-                  <span>Above average</span>
-                </Tooltip>
-              </ToggleButton>
-              <ToggleButton value="FM-all" size="large" aria-label="Almost all">
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Almost all</span>
+                  <span>No</span>
                 </Tooltip>
               </ToggleButton>
             </ToggleButtonGroup>
