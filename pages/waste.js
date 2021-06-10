@@ -9,15 +9,15 @@ import Typography from "@material-ui/core/Typography";
 import Stepper from "../components/Steeper";
 
 export default function Food() {
-  const [OrganicFood, setOrganicFood] = React.useState("OF-none");
-  const [Meat, setMeat] = React.useState("M-above");
+  const [Composting, setComposting] = React.useState("C-none");
+  const [Waste, setWaste] = React.useState("W-above");
   const [FoodMiles, setFoodMiles] = React.useState("FM-little");
 
-  const handleOrganicFood = (event, newOrganicFood) => {
-    setOrganicFood(newOrganicFood);
+  const handleComposting = (event, newComposting) => {
+    setComposting(newComposting);
   };
-  const handleMeat = (event, newMeat) => {
-    setMeat(newMeat);
+  const handleWaste = (event, newWaste) => {
+    setWaste(newWaste);
   };
   const handleFoodMiles = (event, newFoodMiles) => {
     setFoodMiles(newFoodMiles);
@@ -29,33 +29,29 @@ export default function Food() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              How much of the food that you eat is organic?
+              How much do you compost potato peelings, leftover and unused food
+              etc?
             </Typography>
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
             <ToggleButtonGroup
-              value={OrganicFood}
+              value={Composting}
               exclusive
-              onChange={handleOrganicFood}
-              aria-label="Organic Food"
+              onChange={handleComposting}
+              aria-label="Composting"
             >
-              <ToggleButton value="OF-none" size="large" aria-label="None">
-                <Tooltip title="2 rooms" aria-label="add">
+              <ToggleButton value="C-none" size="large" aria-label="None">
+                <Tooltip title="None" aria-label="add">
                   <span>None</span>
                 </Tooltip>
               </ToggleButton>
-              <ToggleButton value="OF-some" size="large" aria-label="Some">
-                <Tooltip title="2 rooms" aria-label="add">
+              <ToggleButton value="C-some" size="large" aria-label="Some">
+                <Tooltip title="Some" aria-label="add">
                   <span>Some</span>
                 </Tooltip>
               </ToggleButton>
-              <ToggleButton value="OF-most" size="large" aria-label="Most">
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Most</span>
-                </Tooltip>
-              </ToggleButton>
-              <ToggleButton value="OF-all" size="large" aria-label="All">
-                <Tooltip title="2 rooms" aria-label="add">
+              <ToggleButton value="C-all" size="large" aria-label="All">
+                <Tooltip title="All" aria-label="add">
                   <span>All</span>
                 </Tooltip>
               </ToggleButton>
@@ -65,51 +61,47 @@ export default function Food() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              How much meat/dairy do you eat personally?
+              How much food do you waste (on average, over one fifth of edible
+              food is thrown away)?
             </Typography>
           </Box>
-          <Box my="2rem">
+          <Box my="2rem" display="flex" justifyContent="center">
             <ToggleButtonGroup
-              value={Meat}
+              value={Waste}
               exclusive
-              onChange={handleMeat}
-              aria-label="Organic Food"
+              onChange={handleWaste}
+              aria-label="Waste"
             >
               <ToggleButton
-                value="M-above"
+                value="W-above"
                 size="large"
                 aria-label="Above-average"
               >
-                <Tooltip title="2 rooms" aria-label="add">
+                <Tooltip title="(50% more)" aria-label="Above-average">
                   <span>Above-average</span>
                 </Tooltip>
               </ToggleButton>
-              <ToggleButton value="M-average" size="large" aria-label="Average">
-                <Tooltip title="2 rooms" aria-label="add">
+              <ToggleButton value="W-average" size="large" aria-label="Average">
+                <Tooltip title="Average" aria-label="Average">
                   <span>Average</span>
                 </Tooltip>
               </ToggleButton>
               <ToggleButton
-                value="M-below"
+                value="W-below"
                 size="large"
                 aria-label="Below-average"
               >
-                <Tooltip title="2 rooms" aria-label="add">
+                <Tooltip title="(50% less)" aria-label="Below-average">
                   <span>Below-average</span>
                 </Tooltip>
               </ToggleButton>
               <ToggleButton
-                value="M-lacto-vegetatian"
+                value="W-little"
                 size="large"
-                aria-label="Lacto-vegetarian"
+                aria-label="Very little"
               >
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Lacto-vegetarian</span>
-                </Tooltip>
-              </ToggleButton>
-              <ToggleButton value="M-vegan" size="large" aria-label="Vegan">
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Vegan</span>
+                <Tooltip title="(90% less)" aria-label="Very little">
+                  <span>Very little</span>
                 </Tooltip>
               </ToggleButton>
             </ToggleButtonGroup>
@@ -166,9 +158,9 @@ export default function Food() {
         <Grid item xs={12}>
           <Stepper
             stepsNumber={10}
-            actualStep={3}
-            nextStep="waste"
-            previousStep="cars"
+            actualStep={4}
+            nextStep="/"
+            previousStep="food"
           />
         </Grid>
       </Grid>
