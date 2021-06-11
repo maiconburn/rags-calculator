@@ -168,7 +168,7 @@ export default function Food() {
           <Stepper
             stepsNumber={10}
             actualStep={4}
-            nextStep="/"
+            nextStep="publicTransport"
             previousStep="food"
           />
         </Grid>
