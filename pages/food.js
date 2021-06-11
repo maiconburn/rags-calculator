@@ -165,10 +165,10 @@ export default function Food() {
         </Grid>
         <Grid item xs={12}>
           <Stepper
-            stepsNumber={10}
-            actualStep={3}
+            stepsNumber={8}
+            actualStep={2}
             nextStep="waste"
-            previousStep="cars"
+            previousStep="houseInfo"
           />
         </Grid>
       </Grid>

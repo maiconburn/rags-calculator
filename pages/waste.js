@@ -166,9 +166,9 @@ export default function Food() {
         </Grid>
         <Grid item xs={12}>
           <Stepper
-            stepsNumber={10}
-            actualStep={4}
-            nextStep="publicTransport"
+            stepsNumber={8}
+            actualStep={3}
+            nextStep="cars"
             previousStep="food"
           />
         </Grid>

@@ -7,10 +7,13 @@ import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 300 + theme.spacing(3) * 2,
+    width: 350 + theme.spacing(3) * 2,
   },
   margin: {
     height: theme.spacing(3),
+  },
+  description: {
+    fontWeight: "bold",
   },
 }));
 
@@ -30,10 +33,58 @@ ValueLabelComponent.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
+const marks = [
+  {
+    value: 0,
+    label: "0",
+  },
+  {
+    value: 100,
+    label: "100",
+  },
+  {
+    value: 200,
+    label: "200",
+  },
+  {
+    value: 300,
+    label: "300",
+  },
+  {
+    value: 400,
+    label: "400",
+  },
+  {
+    value: 500,
+    label: "500",
+  },
+  {
+    value: 600,
+    label: "600",
+  },
+  {
+    value: 700,
+    label: "700",
+  },
+  {
+    value: 800,
+    label: "800",
+  },
+  {
+    value: 900,
+    label: "900",
+  },
+  {
+    value: 1000,
+    label: "1000",
+  },
+];
+
 const CustomSlider = withStyles({
   root: {
-    color: "#52af77",
+    color: "#b1ca39",
     height: 8,
+    marginTop: "40px",
   },
   thumb: {
     height: 24,
@@ -52,11 +103,13 @@ const CustomSlider = withStyles({
   },
   track: {
     height: 8,
-    borderRadius: 4,
   },
   rail: {
     height: 8,
-    borderRadius: 4,
+    paddingRight: "2px",
+  },
+  mark: {
+    top: "21px",
   },
 })(Slider);
 
@@ -64,11 +117,14 @@ export default function CustomizedSlider(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Typography gutterBottom>{props.description}</Typography>
+      <Typography gutterBottom className={classes.description}>
+        {props.description}
+      </Typography>
       <CustomSlider
         valueLabelDisplay="auto"
         aria-label="Slider"
-        max={200}
+        max={1000}
+        marks={marks}
         defaultValue={20}
       />
     </div>

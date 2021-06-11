@@ -25,7 +25,7 @@ export default function Index() {
         </Grid>
         <Grid item xs={12}>
           <Stepper
-            stepsNumber={10}
+            stepsNumber={8}
             actualStep={0}
             nextStep="houseInfo"
             previousStep="/"

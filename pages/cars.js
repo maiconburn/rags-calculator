@@ -67,10 +67,10 @@ export default function Cars() {
         </Grid>
         <Grid item xs={12}>
           <Stepper
-            stepsNumber={10}
-            actualStep={2}
-            nextStep="food"
-            previousStep="houseInfo"
+            stepsNumber={8}
+            actualStep={4}
+            nextStep="publicTransport"
+            previousStep="waste"
           />
         </Grid>
       </Grid>

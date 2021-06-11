@@ -6,7 +6,7 @@ import Slider from "../components/Slider";
 import NavBar from "../components/NavBar";
 import Stepper from "../components/Steeper";
 
-export default function PublicTransport() {
+export default function Flights() {
   return (
     <div>
       <NavBar />
@@ -14,21 +14,21 @@ export default function PublicTransport() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              How many journeys by public transport do you do weekly?
+              How many hours did you spent flying last year?
             </Typography>
           </Box>
         </Grid>
         <Grid item xs={12}>
           <Box my="2rem">
-            <Slider description="Enter your regular mileage each week:" />
+            <Slider description="Enter the number of hours spent flying last year:" />
           </Box>
         </Grid>
         <Grid item xs={12}>
           <Stepper
             stepsNumber={8}
-            actualStep={5}
-            nextStep="flights"
-            previousStep="cars"
+            actualStep={6}
+            nextStep="/"
+            previousStep="publicTransport"
           />
         </Grid>
       </Grid>
