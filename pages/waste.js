@@ -11,7 +11,8 @@ import Stepper from "../components/Steeper";
 export default function Food() {
   const [Composting, setComposting] = React.useState("C-none");
   const [Waste, setWaste] = React.useState("W-above");
-  const [FoodMiles, setFoodMiles] = React.useState("FM-little");
+  const [RecycleMix, setRecycleMix] = React.useState("RM-yes");
+  const [RecyclePlastic, setRecyclePlastic] = React.useState("RP-yes");
 
   const handleComposting = (event, newComposting) => {
     setComposting(newComposting);
@@ -19,8 +20,12 @@ export default function Food() {
   const handleWaste = (event, newWaste) => {
     setWaste(newWaste);
   };
-  const handleFoodMiles = (event, newFoodMiles) => {
-    setFoodMiles(newFoodMiles);
+  const handleRecycleMix = (event, newRecycleMix) => {
+    setRecycleMix(newRecycleMix);
+  };
+
+  const handleRecyclePlastic = (event, newRecyclePlastic) => {
+    setRecyclePlastic(newRecyclePlastic);
   };
   return (
     <div>
@@ -115,26 +120,18 @@ export default function Food() {
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
             <ToggleButtonGroup
-              value={FoodMiles}
+              value={RecycleMix}
               exclusive
-              onChange={handleFoodMiles}
-              aria-label="Food Miles"
+              onChange={handleRecycleMix}
+              aria-label="Recycle Mix"
             >
-              <ToggleButton
-                value="FM-little"
-                size="large"
-                aria-label="Very little"
-              >
-                <Tooltip title="2 rooms" aria-label="add">
+              <ToggleButton value="RM-yes" size="large" aria-label="Yes">
+                <Tooltip title="Yes" aria-label="Yes">
                   <span>Yes</span>
                 </Tooltip>
               </ToggleButton>
-              <ToggleButton
-                value="FM-average"
-                size="large"
-                aria-label="Average"
-              >
-                <Tooltip title="2 rooms" aria-label="add">
+              <ToggleButton value="RM-no" size="large" aria-label="No">
+                <Tooltip title="No" aria-label="No">
                   <span>No</span>
                 </Tooltip>
               </ToggleButton>
@@ -149,26 +146,18 @@ export default function Food() {
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
             <ToggleButtonGroup
-              value={FoodMiles}
+              value={RecyclePlastic}
               exclusive
-              onChange={handleFoodMiles}
-              aria-label="Food Miles"
+              onChange={handleRecyclePlastic}
+              aria-label="Recycle Plastic"
             >
-              <ToggleButton
-                value="FM-little"
-                size="large"
-                aria-label="Very little"
-              >
-                <Tooltip title="2 rooms" aria-label="add">
+              <ToggleButton value="RP-yes" size="large" aria-label="Yes">
+                <Tooltip title="Yes" aria-label="Yes">
                   <span>Yes</span>
                 </Tooltip>
               </ToggleButton>
-              <ToggleButton
-                value="FM-average"
-                size="large"
-                aria-label="Average"
-              >
-                <Tooltip title="2 rooms" aria-label="add">
+              <ToggleButton value="RP-no" size="large" aria-label="No">
+                <Tooltip title="No" aria-label="No">
                   <span>No</span>
                 </Tooltip>
               </ToggleButton>

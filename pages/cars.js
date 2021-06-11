@@ -10,9 +10,9 @@ import NavBar from "../components/NavBar";
 import Stepper from "../components/Steeper";
 
 export default function Cars() {
-  const [FoodMiles, setFoodMiles] = React.useState("FM-little");
-  const handleFoodMiles = (event, newFoodMiles) => {
-    setFoodMiles(newFoodMiles);
+  const [Cars, setCars] = React.useState("C-low");
+  const handleCars = (event, newCars) => {
+    setCars(newCars);
   };
   return (
     <div>
@@ -38,31 +38,23 @@ export default function Cars() {
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
             <ToggleButtonGroup
-              value={FoodMiles}
+              value={Cars}
               exclusive
-              onChange={handleFoodMiles}
-              aria-label="Food Miles"
+              onChange={handleCars}
+              aria-label="Cars"
             >
-              <ToggleButton
-                value="CM-low"
-                size="large"
-                aria-label="Very little"
-              >
+              <ToggleButton value="C-low" size="large" aria-label="Very little">
                 <Tooltip title="(6,000 miles or less)" aria-label="add">
                   <span>Low</span>
                 </Tooltip>
               </ToggleButton>
-              <ToggleButton
-                value="CM-average"
-                size="large"
-                aria-label="Average"
-              >
+              <ToggleButton value="C-average" size="large" aria-label="Average">
                 <Tooltip title="(Around 9,000 miles)" aria-label="add">
                   <span>Average</span>
                 </Tooltip>
               </ToggleButton>
               <ToggleButton
-                value="CM-above"
+                value="C-above"
                 size="large"
                 aria-label="Above average"
               >
