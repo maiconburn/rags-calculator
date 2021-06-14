@@ -8,8 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 export default function houseInfo() {
-  const [SourceEnergy, setSourceEnergy] = React.useState("electricity");
-  const [HouseSize, setHouseSize] = React.useState("small");
+  const [SourceEnergy, setSourceEnergy] = React.useState();
+  const [HouseSize, setHouseSize] = React.useState();
 
   const handleSourceEnergy = (event, newSourceEnergy) => {
     console.log(event);

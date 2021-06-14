@@ -62,6 +62,7 @@ export default function userInfo() {
                   variant="contained"
                   color="primary"
                   size="large"
+                  href="/results"
                   className={classes.button}
                   startIcon={<EcoIcon />}
                 >

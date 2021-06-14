@@ -20,7 +20,7 @@ export default function Index() {
         </Grid>
         <Grid item xs={12}>
           <Box my="3rem">
-            <ButtonIncrementDecrement />
+            <ButtonIncrementDecrement start={1} />
           </Box>
         </Grid>
         <Grid item xs={12}>

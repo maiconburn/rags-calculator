@@ -9,10 +9,10 @@ import Typography from "@material-ui/core/Typography";
 import Stepper from "../components/Steeper";
 
 export default function Food() {
-  const [Composting, setComposting] = React.useState("C-none");
-  const [Waste, setWaste] = React.useState("W-above");
-  const [RecycleMix, setRecycleMix] = React.useState("RM-yes");
-  const [RecyclePlastic, setRecyclePlastic] = React.useState("RP-yes");
+  const [Composting, setComposting] = React.useState();
+  const [Waste, setWaste] = React.useState();
+  const [RecycleMix, setRecycleMix] = React.useState();
+  const [RecyclePlastic, setRecyclePlastic] = React.useState();
 
   const handleComposting = (event, newComposting) => {
     setComposting(newComposting);

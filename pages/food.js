@@ -9,9 +9,9 @@ import Typography from "@material-ui/core/Typography";
 import Stepper from "../components/Steeper";
 
 export default function Food() {
-  const [OrganicFood, setOrganicFood] = React.useState("OF-none");
-  const [Meat, setMeat] = React.useState("M-above");
-  const [FoodMiles, setFoodMiles] = React.useState("FM-little");
+  const [OrganicFood, setOrganicFood] = React.useState();
+  const [Meat, setMeat] = React.useState();
+  const [FoodMiles, setFoodMiles] = React.useState();
 
   const handleOrganicFood = (event, newOrganicFood) => {
     setOrganicFood(newOrganicFood);

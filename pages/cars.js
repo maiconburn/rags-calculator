@@ -10,7 +10,7 @@ import NavBar from "../components/NavBar";
 import Stepper from "../components/Steeper";
 
 export default function Cars() {
-  const [Cars, setCars] = React.useState("C-low");
+  const [Cars, setCars] = React.useState();
   const handleCars = (event, newCars) => {
     setCars(newCars);
   };
@@ -27,7 +27,7 @@ export default function Cars() {
         </Grid>
         <Grid item xs={12}>
           <Box my="2rem">
-            <ButtonIncrementDecrement />
+            <ButtonIncrementDecrement start={0} />
           </Box>
         </Grid>
         <Grid item xs={12}>
