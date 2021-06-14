@@ -103,7 +103,7 @@ export default function Food() {
               How much of your food is produced locally?
             </Typography>
           </Box>
-          <Box my="2rem">
+          <Box my="2rem" display="flex" justifyContent="center">
             <ToggleButtonGroup
               value={FoodMiles}
               exclusive
