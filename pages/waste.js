@@ -34,8 +34,7 @@ export default function Food() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              How much do you compost potato peelings, leftover and unused food
-              etc?
+              How much of your unused food do you compost?
             </Typography>
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
@@ -66,8 +65,7 @@ export default function Food() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              How much food do you waste (on average, over one fifth of edible
-              food is thrown away)?
+              How much of your food goes to landfill?
             </Typography>
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
@@ -78,36 +76,28 @@ export default function Food() {
               aria-label="Waste"
             >
               <ToggleButton
-                value="W-above"
+                value="W-little"
                 size="large"
-                aria-label="Above-average"
+                aria-label="Very little"
               >
-                <Tooltip title="(50% more)" aria-label="Above-average">
-                  <span>Above-average</span>
-                </Tooltip>
-              </ToggleButton>
-              <ToggleButton value="W-average" size="large" aria-label="Average">
-                <Tooltip title="Average" aria-label="Average">
-                  <span>Average</span>
-                </Tooltip>
+                <span>Less than 5%</span>
               </ToggleButton>
               <ToggleButton
                 value="W-below"
                 size="large"
                 aria-label="Below-average"
               >
-                <Tooltip title="(50% less)" aria-label="Below-average">
-                  <span>Below-average</span>
-                </Tooltip>
+                <span>Less than 10%</span>
+              </ToggleButton>
+              <ToggleButton value="W-average" size="large" aria-label="Average">
+                <span>Less than 25%</span>
               </ToggleButton>
               <ToggleButton
-                value="W-little"
+                value="W-above"
                 size="large"
-                aria-label="Very little"
+                aria-label="Above-average"
               >
-                <Tooltip title="(90% less)" aria-label="Very little">
-                  <span>Very little</span>
-                </Tooltip>
+                <span>25% or more</span>
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>
@@ -126,14 +116,10 @@ export default function Food() {
               aria-label="Recycle Mix"
             >
               <ToggleButton value="RM-yes" size="large" aria-label="Yes">
-                <Tooltip title="Yes" aria-label="Yes">
-                  <span>Yes</span>
-                </Tooltip>
+                <span>Yes</span>
               </ToggleButton>
               <ToggleButton value="RM-no" size="large" aria-label="No">
-                <Tooltip title="No" aria-label="No">
-                  <span>No</span>
-                </Tooltip>
+                <span>No</span>
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>
@@ -141,7 +127,7 @@ export default function Food() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              Do you recycle plastic apart from bags?
+              Do you recycle plastic?
             </Typography>
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
@@ -152,14 +138,10 @@ export default function Food() {
               aria-label="Recycle Plastic"
             >
               <ToggleButton value="RP-yes" size="large" aria-label="Yes">
-                <Tooltip title="Yes" aria-label="Yes">
-                  <span>Yes</span>
-                </Tooltip>
+                <span>Yes</span>
               </ToggleButton>
               <ToggleButton value="RP-no" size="large" aria-label="No">
-                <Tooltip title="No" aria-label="No">
-                  <span>No</span>
-                </Tooltip>
+                <span>No</span>
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>
