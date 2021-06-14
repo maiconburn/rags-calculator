@@ -33,7 +33,7 @@ export default function Cars() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              How many cars are used by your household?
+              What is the average mileage for your cars?
             </Typography>
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
@@ -44,23 +44,17 @@ export default function Cars() {
               aria-label="Cars"
             >
               <ToggleButton value="C-low" size="large" aria-label="Very little">
-                <Tooltip title="(6,000 miles or less)" aria-label="add">
-                  <span>Low</span>
-                </Tooltip>
+                <span>Up to 5,000 miles</span>
               </ToggleButton>
               <ToggleButton value="C-average" size="large" aria-label="Average">
-                <Tooltip title="(Around 9,000 miles)" aria-label="add">
-                  <span>Average</span>
-                </Tooltip>
+                <span>5,000–10,000 miles</span>
               </ToggleButton>
               <ToggleButton
                 value="C-above"
                 size="large"
                 aria-label="Above average"
               >
-                <Tooltip title="(12,000 miles or more)" aria-label="add">
-                  <span>High</span>
-                </Tooltip>
+                <span>More than 10,000 miles</span>
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>
