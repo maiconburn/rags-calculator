@@ -40,24 +40,16 @@ export default function Food() {
               aria-label="Organic Food"
             >
               <ToggleButton value="OF-none" size="large" aria-label="None">
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>None</span>
-                </Tooltip>
+                None
               </ToggleButton>
               <ToggleButton value="OF-some" size="large" aria-label="Some">
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Some</span>
-                </Tooltip>
+                Some
               </ToggleButton>
               <ToggleButton value="OF-most" size="large" aria-label="Most">
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Most</span>
-                </Tooltip>
+                Most
               </ToggleButton>
               <ToggleButton value="OF-all" size="large" aria-label="All">
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>All</span>
-                </Tooltip>
+                All
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>
@@ -65,7 +57,7 @@ export default function Food() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              How much meat/dairy do you eat personally?
+              How much meat/dairy do you eat?
             </Typography>
           </Box>
           <Box my="2rem">
@@ -75,42 +67,32 @@ export default function Food() {
               onChange={handleMeat}
               aria-label="Organic Food"
             >
-              <ToggleButton
-                value="M-above"
-                size="large"
-                aria-label="Above-average"
-              >
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Above-average</span>
-                </Tooltip>
-              </ToggleButton>
-              <ToggleButton value="M-average" size="large" aria-label="Average">
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Average</span>
-                </Tooltip>
-              </ToggleButton>
-              <ToggleButton
-                value="M-below"
-                size="large"
-                aria-label="Below-average"
-              >
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Below-average</span>
-                </Tooltip>
+              <ToggleButton value="M-vegan" size="large" aria-label="Vegan">
+                <span>Vegan</span>
               </ToggleButton>
               <ToggleButton
                 value="M-lacto-vegetatian"
                 size="large"
                 aria-label="Lacto-vegetarian"
               >
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Lacto-vegetarian</span>
-                </Tooltip>
+                <span>vegetarian</span>
               </ToggleButton>
-              <ToggleButton value="M-vegan" size="large" aria-label="Vegan">
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Vegan</span>
-                </Tooltip>
+              <ToggleButton
+                value="M-below"
+                size="large"
+                aria-label="Below-average"
+              >
+                <span>Below-average</span>
+              </ToggleButton>
+              <ToggleButton value="M-average" size="large" aria-label="Average">
+                <span>Average</span>
+              </ToggleButton>
+              <ToggleButton
+                value="M-above"
+                size="large"
+                aria-label="Above-average"
+              >
+                <span>Above-average</span>
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>
@@ -133,32 +115,24 @@ export default function Food() {
                 size="large"
                 aria-label="Very little"
               >
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Very little</span>
-                </Tooltip>
+                <span>None</span>
               </ToggleButton>
               <ToggleButton
                 value="FM-average"
                 size="large"
                 aria-label="Average"
               >
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Average</span>
-                </Tooltip>
+                <span>Some</span>
               </ToggleButton>
               <ToggleButton
                 value="FM-above"
                 size="large"
                 aria-label="Above average"
               >
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Above average</span>
-                </Tooltip>
+                <span>Most</span>
               </ToggleButton>
               <ToggleButton value="FM-all" size="large" aria-label="Almost all">
-                <Tooltip title="2 rooms" aria-label="add">
-                  <span>Almost all</span>
-                </Tooltip>
+                <span>All</span>
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>

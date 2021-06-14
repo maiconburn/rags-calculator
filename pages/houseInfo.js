@@ -71,7 +71,7 @@ export default function houseInfo() {
           >
             <Grid item>
               <Typography variant="h5" align="center">
-                Roughly, how big is your house?
+                How big is your home?
               </Typography>
             </Grid>
           </Grid>
@@ -90,7 +90,7 @@ export default function houseInfo() {
             </ToggleButton>
 
             <ToggleButton value="medium" size="large" aria-label="Medium">
-              <Tooltip title="2-3 Rooms" aria-label="add">
+              <Tooltip title="2–3 Rooms" aria-label="add">
                 <span>Medium</span>
               </Tooltip>
             </ToggleButton>
@@ -106,9 +106,7 @@ export default function houseInfo() {
               size="large"
               aria-label="Halls of residence"
             >
-              <Tooltip title="Student Halls" aria-label="add">
-                <span>Halls of residence</span>
-              </Tooltip>
+              Halls of residence
             </ToggleButton>
           </ToggleButtonGroup>
         </Box>
