@@ -49,6 +49,15 @@ export default function results() {
     const PublicTransport = window.localStorage.getItem("PublicTransport");
     const Flights = window.localStorage.getItem("Flights");
 
+    //Categories definition
+    const EnergyImpact = 0;
+    const FoodImpact = 0;
+    const WasteImpact = 0;
+    const RecycleImpact = 0;
+    const CarsImpact = 0;
+    const PublicTransportImpact = 0;
+    const FlightsImpact = 0;
+
     console.log(
       peopleHousehold,
       SourceEnergy,
