@@ -20,10 +20,7 @@ export default function Flights() {
         </Grid>
         <Grid item xs={12}>
           <Box my="2rem">
-            <Slider
-              variable="Flights"
-              description="Enter the number of hours spent flying last year:"
-            />
+            <Slider variable="Flights" />
           </Box>
         </Grid>
         <Grid item xs={12}>

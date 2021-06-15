@@ -130,9 +130,6 @@ export default function CustomizedSlider(props) {
 
   return (
     <div className={classes.root}>
-      <Typography gutterBottom className={classes.description}>
-        {props.description}
-      </Typography>
       <CustomSlider
         value={value}
         onChange={handleChange}

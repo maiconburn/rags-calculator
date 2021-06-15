@@ -50,7 +50,6 @@ export default function results() {
     const Flights = window.localStorage.getItem("Flights");
 
     //Categories definition
-    const FoodImpact = 0;
     const WasteImpact = 0;
     const RecycleImpact = 0;
     const CarsImpact = 0;
@@ -61,7 +60,6 @@ export default function results() {
     var GasEnergyConsumption = 0;
 
     if (SourceEnergy == "electricity") {
-      console.log(typeof HouseSize);
       switch (HouseSize) {
         case "small":
           ElectricEnergyConsumption = 3000;
@@ -75,19 +73,13 @@ export default function results() {
         case "halls":
           ElectricEnergyConsumption = 2000;
           break;
-        default:
-        // code block
       }
       const HouseEnergyImpact =
         Math.round(ElectricEnergyConsumption * 0.000527 * 100) / 100;
-      console.log("HouseEnergyImpact: ", HouseEnergyImpact);
       const PersonalEnergyImpact = HouseEnergyImpact / peopleHousehold;
-      console.log("PersonalEnergyImpact: ", PersonalEnergyImpact);
 
       const EnergyImpact = PersonalEnergyImpact;
     } else {
-      console.log(typeof HouseSize);
-      console.log("Passou 2");
       switch (HouseSize) {
         case "small":
           ElectricEnergyConsumption = 3000;
@@ -96,7 +88,6 @@ export default function results() {
         case "medium":
           ElectricEnergyConsumption = ElectricEnergyConsumption + 4800;
           GasEnergyConsumption = GasEnergyConsumption + 18000;
-          console.log("passou 3");
           break;
         case "large":
           ElectricEnergyConsumption = ElectricEnergyConsumption + 7000;
@@ -106,19 +97,74 @@ export default function results() {
           ElectricEnergyConsumption = ElectricEnergyConsumption + 2000;
           GasEnergyConsumption = GasEnergyConsumption + 5000;
           break;
-        default:
-          console.log("passou 4");
-        // code block
       }
       const HouseEnergyImpact =
         Math.round(ElectricEnergyConsumption * 0.000527 * 100) / 100 +
         Math.round(GasEnergyConsumption * 0.000203 * 100) / 100;
-      console.log("HouseEnergyImpact: ", HouseEnergyImpact);
       const PersonalEnergyImpact = HouseEnergyImpact / peopleHousehold;
-      console.log("PersonalEnergyImpact: ", PersonalEnergyImpact);
 
       const EnergyImpact = PersonalEnergyImpact;
+
+      console.log("Energy Impact", EnergyImpact);
     }
+
+    var OrganicFoodImpact = 0;
+
+    switch (OrganicFood) {
+      case "OF-none":
+        OrganicFoodImpact = 0.7;
+        break;
+      case "OF-some":
+        OrganicFoodImpact = 0.5;
+        break;
+      case "OF-most":
+        OrganicFoodImpact = 0.2;
+        break;
+      case "OF-all":
+        OrganicFoodImpact = 0;
+        break;
+    }
+
+    var MeatImpact = 0;
+
+    switch (Meat) {
+      case "M-vegan":
+        MeatImpact = 0;
+        break;
+      case "M-lacto-vegetatian":
+        MeatImpact = 0.1;
+        break;
+      case "M-below":
+        MeatImpact = 0.25;
+        break;
+      case "M-average":
+        MeatImpact = 0.4;
+        break;
+      case "M-above":
+        MeatImpact = 0.6;
+        break;
+    }
+
+    var FoodMilesImpact = 0;
+
+    switch (FoodMiles) {
+      case "FM-none":
+        FoodMilesImpact = 0.6;
+        break;
+      case "FM-some":
+        FoodMilesImpact = 0.4;
+        break;
+      case "FM-most":
+        FoodMilesImpact = 0.2;
+        break;
+      case "FM-all":
+        FoodMilesImpact = 0.05;
+        break;
+    }
+
+    const FoodImpact = OrganicFoodImpact + MeatImpact + FoodMilesImpact;
+
+    console.log("Food Impact", FoodImpact);
 
     console.log(
       peopleHousehold,

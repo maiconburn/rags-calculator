@@ -19,11 +19,8 @@ export default function PublicTransport() {
           </Box>
         </Grid>
         <Grid item xs={12}>
-          <Box my="2rem">
-            <Slider
-              variable="PublicTransport"
-              description="Enter your regular mileage each week:"
-            />
+          <Box my="1rem">
+            <Slider variable="PublicTransport" />
           </Box>
         </Grid>
         <Grid item xs={12}>

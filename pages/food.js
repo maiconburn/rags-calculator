@@ -2,7 +2,6 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import Tooltip from "@material-ui/core/Tooltip";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import Typography from "@material-ui/core/Typography";
@@ -24,9 +23,9 @@ export default function Food() {
   };
 
   React.useEffect(() => {
-    window.localStorage.setItem("OrganicFood", JSON.stringify(OrganicFood));
-    window.localStorage.setItem("Meat", JSON.stringify(Meat));
-    window.localStorage.setItem("FoodMiles", JSON.stringify(FoodMiles));
+    window.localStorage.setItem("OrganicFood", OrganicFood);
+    window.localStorage.setItem("Meat", Meat);
+    window.localStorage.setItem("FoodMiles", FoodMiles);
     //const test = window.localStorage.getItem("SourceEnergy");
     //console.log(test);
   }, [OrganicFood, Meat, FoodMiles]);
@@ -119,25 +118,13 @@ export default function Food() {
               onChange={handleFoodMiles}
               aria-label="Food Miles"
             >
-              <ToggleButton
-                value="FM-little"
-                size="large"
-                aria-label="Very little"
-              >
+              <ToggleButton value="FM-none" size="large" aria-label="None">
                 <span>None</span>
               </ToggleButton>
-              <ToggleButton
-                value="FM-average"
-                size="large"
-                aria-label="Average"
-              >
+              <ToggleButton value="FM-some" size="large" aria-label="Some">
                 <span>Some</span>
               </ToggleButton>
-              <ToggleButton
-                value="FM-above"
-                size="large"
-                aria-label="Above average"
-              >
+              <ToggleButton value="FM-most" size="large" aria-label="Most">
                 <span>Most</span>
               </ToggleButton>
               <ToggleButton value="FM-all" size="large" aria-label="Almost all">
