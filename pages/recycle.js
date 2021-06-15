@@ -8,7 +8,7 @@ import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import Typography from "@material-ui/core/Typography";
 import Stepper from "../components/Steeper";
 
-export default function Food() {
+export default function Recycle() {
   const [RecycleMix, setRecycleMix] = React.useState();
   const [RecyclePlastic, setRecyclePlastic] = React.useState();
 

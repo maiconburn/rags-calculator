@@ -152,24 +152,28 @@ export default function Food() {
               aria-label="Waste"
             >
               <ToggleButton
-                value="W-above"
+                value="W-lessThan5"
                 size="large"
-                aria-label="Above average"
+                aria-label="Less than 5%"
               >
                 <span>Less than 5%</span>
               </ToggleButton>
               <ToggleButton
-                value="W-below"
+                value="W-lessThan10"
                 size="large"
-                aria-label="Below-average"
+                aria-label="Less than 10%"
               >
                 <span>Less than 10%</span>
               </ToggleButton>
-              <ToggleButton value="W-average" size="large" aria-label="Average">
+              <ToggleButton
+                value="W-lessThan25"
+                size="large"
+                aria-label="Average"
+              >
                 <span>Less than 25%</span>
               </ToggleButton>
               <ToggleButton
-                value="W-above"
+                value="W-25orMore"
                 size="large"
                 aria-label="Above-average"
               >
@@ -182,7 +186,7 @@ export default function Food() {
           <Stepper
             stepsNumber={8}
             actualStep={2}
-            nextStep="waste"
+            nextStep="recycle"
             previousStep="houseInfo"
           />
         </Grid>

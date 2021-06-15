@@ -69,7 +69,7 @@ export default function Cars() {
             stepsNumber={8}
             actualStep={4}
             nextStep="publicTransport"
-            previousStep="waste"
+            previousStep="recycle"
           />
         </Grid>
       </Grid>

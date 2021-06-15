@@ -40,7 +40,6 @@ export default function results() {
     const OrganicFood = window.localStorage.getItem("OrganicFood");
     const Meat = window.localStorage.getItem("Meat");
     const FoodMiles = window.localStorage.getItem("FoodMiles");
-    const Composting = window.localStorage.getItem("Composting");
     const Waste = window.localStorage.getItem("Waste");
     const RecycleMix = window.localStorage.getItem("RecycleMix");
     const RecyclePlastic = window.localStorage.getItem("RecyclePlastic");
@@ -162,7 +161,25 @@ export default function results() {
         break;
     }
 
-    const FoodImpact = OrganicFoodImpact + MeatImpact + FoodMilesImpact;
+    var WasteImpact = 0;
+
+    switch (Waste) {
+      case "W-lessThan5":
+        WasteImpact = 0.025;
+        break;
+      case "W-lessThan5":
+        WasteImpact = 0.125;
+        break;
+      case "W-lessThan5":
+        WasteImpact = 0.25;
+        break;
+      case "W-25orMore":
+        WasteImpact = 0.375;
+        break;
+    }
+
+    const FoodImpact =
+      (OrganicFoodImpact + MeatImpact + FoodMilesImpact) * WasteImpact;
 
     console.log("Food Impact", FoodImpact);
 
