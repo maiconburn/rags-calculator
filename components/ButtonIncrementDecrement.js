@@ -9,16 +9,12 @@ import styles from "../styles/components/ButtonIncrementDecrement.module.scss";
 export default function ButtonIncrementDecrement(props) {
   const [counter, setCounter] = React.useState(props.start || 0);
 
-  const person = {
-    name: "Obaseki Nosa",
-    location: "Lagos",
-  };
+  React.useEffect(() => {
+    window.localStorage.setItem(props.variable, JSON.stringify(counter));
 
-  localStorage.setItem("user", JSON.stringify(person));
-
-  const test = localStorage.getItem("user");
-
-  console.log(test);
+    //const test = window.localStorage.getItem(props.variable);
+    //console.log(test);
+  }, [props.variable, counter]);
 
   const handleIncrement = () => {
     setCounter((counter) => counter + 1);
