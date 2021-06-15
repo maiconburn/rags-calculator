@@ -10,7 +10,7 @@ export default function ButtonIncrementDecrement(props) {
   const [counter, setCounter] = React.useState(props.start || 0);
 
   React.useEffect(() => {
-    window.localStorage.setItem(props.variable, JSON.stringify(counter));
+    window.localStorage.setItem(props.variable, counter);
 
     //const test = window.localStorage.getItem(props.variable);
     //console.log(test);

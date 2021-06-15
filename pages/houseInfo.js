@@ -20,8 +20,8 @@ export default function houseInfo() {
   };
 
   React.useEffect(() => {
-    window.localStorage.setItem("SourceEnergy", JSON.stringify(SourceEnergy));
-    window.localStorage.setItem("HouseSize", JSON.stringify(HouseSize));
+    window.localStorage.setItem("SourceEnergy", SourceEnergy);
+    window.localStorage.setItem("HouseSize", HouseSize);
     //const test = window.localStorage.getItem("SourceEnergy");
     //console.log(test);
   }, [SourceEnergy, HouseSize]);
@@ -108,7 +108,7 @@ export default function houseInfo() {
             </ToggleButton>
 
             <ToggleButton
-              value="halls"
+              value={"halls"}
               size="large"
               aria-label="Halls of residence"
             >

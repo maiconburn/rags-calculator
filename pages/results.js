@@ -50,13 +50,75 @@ export default function results() {
     const Flights = window.localStorage.getItem("Flights");
 
     //Categories definition
-    const EnergyImpact = 0;
     const FoodImpact = 0;
     const WasteImpact = 0;
     const RecycleImpact = 0;
     const CarsImpact = 0;
     const PublicTransportImpact = 0;
     const FlightsImpact = 0;
+
+    var ElectricEnergyConsumption = 0;
+    var GasEnergyConsumption = 0;
+
+    if (SourceEnergy == "electricity") {
+      console.log(typeof HouseSize);
+      switch (HouseSize) {
+        case "small":
+          ElectricEnergyConsumption = 3000;
+          break;
+        case "medium":
+          ElectricEnergyConsumption = 4800;
+          break;
+        case "large":
+          ElectricEnergyConsumption = 7000;
+          break;
+        case "halls":
+          ElectricEnergyConsumption = 2000;
+          break;
+        default:
+        // code block
+      }
+      const HouseEnergyImpact =
+        Math.round(ElectricEnergyConsumption * 0.000527 * 100) / 100;
+      console.log("HouseEnergyImpact: ", HouseEnergyImpact);
+      const PersonalEnergyImpact = HouseEnergyImpact / peopleHousehold;
+      console.log("PersonalEnergyImpact: ", PersonalEnergyImpact);
+
+      const EnergyImpact = PersonalEnergyImpact;
+    } else {
+      console.log(typeof HouseSize);
+      console.log("Passou 2");
+      switch (HouseSize) {
+        case "small":
+          ElectricEnergyConsumption = 3000;
+          GasEnergyConsumption = 12000;
+          break;
+        case "medium":
+          ElectricEnergyConsumption = ElectricEnergyConsumption + 4800;
+          GasEnergyConsumption = GasEnergyConsumption + 18000;
+          console.log("passou 3");
+          break;
+        case "large":
+          ElectricEnergyConsumption = ElectricEnergyConsumption + 7000;
+          GasEnergyConsumption = GasEnergyConsumption + 27000;
+          break;
+        case "halls":
+          ElectricEnergyConsumption = ElectricEnergyConsumption + 2000;
+          GasEnergyConsumption = GasEnergyConsumption + 5000;
+          break;
+        default:
+          console.log("passou 4");
+        // code block
+      }
+      const HouseEnergyImpact =
+        Math.round(ElectricEnergyConsumption * 0.000527 * 100) / 100 +
+        Math.round(GasEnergyConsumption * 0.000203 * 100) / 100;
+      console.log("HouseEnergyImpact: ", HouseEnergyImpact);
+      const PersonalEnergyImpact = HouseEnergyImpact / peopleHousehold;
+      console.log("PersonalEnergyImpact: ", PersonalEnergyImpact);
+
+      const EnergyImpact = PersonalEnergyImpact;
+    }
 
     console.log(
       peopleHousehold,
