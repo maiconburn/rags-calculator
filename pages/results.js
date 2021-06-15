@@ -58,7 +58,6 @@ export default function results() {
             <form className={classes.root} noValidate autoComplete="off">
               <Grid
                 container
-                xs={12}
                 direction="column"
                 justify="center"
                 alignItems="center"

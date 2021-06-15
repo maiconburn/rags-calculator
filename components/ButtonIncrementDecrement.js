@@ -1,5 +1,4 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
@@ -10,27 +9,25 @@ import styles from "../styles/components/ButtonIncrementDecrement.module.scss";
 export default function ButtonIncrementDecrement(props) {
   const [counter, setCounter] = React.useState(props.start || 0);
 
-  const dispatch = useDispatch();
+  const person = {
+    name: "Obaseki Nosa",
+    location: "Lagos",
+  };
 
-  function addToState(data) {
-    return { type: "ADD_TO_STATE", data: data };
-  }
+  localStorage.setItem("user", JSON.stringify(person));
 
-  const stateInfo = {};
+  const test = localStorage.getItem("user");
+
+  console.log(test);
 
   const handleIncrement = () => {
     setCounter((counter) => counter + 1);
-    stateInfo["teste"] = counter + 1;
-    stateInfo[props.variable] = counter + 1;
-    (() => dispatch(addToState(stateInfo)))();
   };
 
   const handleDecrement = () => {
     setCounter((counter) =>
       counter > props.start ? counter - 1 : (counter = counter)
     );
-    stateInfo[props.variable] = counter > props.start ? counter - 1 : counter;
-    (() => dispatch(addToState(stateInfo)))();
   };
 
   return (
