@@ -30,7 +30,7 @@ export default function Food() {
     window.localStorage.setItem("OrganicFood", OrganicFood);
     window.localStorage.setItem("Meat", Meat);
     window.localStorage.setItem("FoodMiles", FoodMiles);
-    window.localStorage.setItem("Waste", JSON.stringify(Waste));
+    window.localStorage.setItem("Waste", Waste);
     //const test = window.localStorage.getItem("SourceEnergy");
     //console.log(test);
   }, [OrganicFood, Meat, FoodMiles, Waste]);

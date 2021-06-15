@@ -49,7 +49,6 @@ export default function results() {
     const Flights = window.localStorage.getItem("Flights");
 
     //Categories definition
-    const RecycleImpact = 0;
     const CarsImpact = 0;
     const PublicTransportImpact = 0;
     const FlightsImpact = 0;
@@ -79,6 +78,7 @@ export default function results() {
       const PersonalEnergyImpact = HouseEnergyImpact / peopleHousehold;
 
       const EnergyImpact = PersonalEnergyImpact;
+      console.log("Energy Impact", EnergyImpact);
     } else {
       switch (HouseSize) {
         case "small":
@@ -170,10 +170,10 @@ export default function results() {
       case "W-lessThan5":
         WasteImpact = 0.025;
         break;
-      case "W-lessThan5":
+      case "W-lessThan10":
         WasteImpact = 0.125;
         break;
-      case "W-lessThan5":
+      case "W-lessThan25":
         WasteImpact = 0.25;
         break;
       case "W-25orMore":
@@ -186,6 +186,35 @@ export default function results() {
 
     console.log("Food Impact", FoodImpact);
 
+    //RecycleImpact calculation
+
+    var RecycleMixImpact = 0;
+
+    switch (RecycleMix) {
+      case "RM-yes":
+        RecycleMixImpact = 1;
+        break;
+      case "RM-no":
+        RecycleMixImpact = 0;
+        break;
+    }
+
+    var RecyclePlasticImpact = 0;
+
+    switch (RecyclePlastic) {
+      case "RP-yes":
+        RecyclePlasticImpact = 1;
+        break;
+      case "RP-no":
+        RecyclePlasticImpact = 0;
+        break;
+    }
+
+    const RecycleImpact =
+      -(0.7 * RecycleMixImpact) - 0.14 * RecyclePlasticImpact;
+
+    console.log("Recycle Impact", RecycleImpact);
+
     console.log(
       peopleHousehold,
       SourceEnergy,
@@ -193,7 +222,6 @@ export default function results() {
       OrganicFood,
       Meat,
       FoodMiles,
-      Composting,
       Waste,
       RecycleMix,
       RecyclePlastic,

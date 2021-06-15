@@ -19,11 +19,8 @@ export default function Recycle() {
   };
 
   React.useEffect(() => {
-    window.localStorage.setItem("RecycleMix", JSON.stringify(RecycleMix));
-    window.localStorage.setItem(
-      "RecyclePlastic",
-      JSON.stringify(RecyclePlastic)
-    );
+    window.localStorage.setItem("RecycleMix", RecycleMix);
+    window.localStorage.setItem("RecyclePlastic", RecyclePlastic);
     //const test = window.localStorage.getItem("SourceEnergy");
     //console.log(test);
   }, [RecycleMix, RecyclePlastic]);
