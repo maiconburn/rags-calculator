@@ -115,14 +115,30 @@ const CustomSlider = withStyles({
 
 export default function CustomizedSlider(props) {
   const classes = useStyles();
+  const [value, setValue] = React.useState();
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  React.useEffect(() => {
+    window.localStorage.setItem(props.variable, JSON.stringify(value));
+    console.log(props.variable, value);
+    const test = window.localStorage.getItem(props.variable);
+    console.log(test);
+  }, [value]);
+
   return (
     <div className={classes.root}>
       <Typography gutterBottom className={classes.description}>
         {props.description}
       </Typography>
       <CustomSlider
+        value={value}
+        onChange={handleChange}
         valueLabelDisplay="auto"
         aria-label="Slider"
+        step={25}
         max={1000}
         marks={marks}
         defaultValue={20}

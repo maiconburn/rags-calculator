@@ -22,6 +22,15 @@ export default function Food() {
   const handleFoodMiles = (event, newFoodMiles) => {
     setFoodMiles(newFoodMiles);
   };
+
+  React.useEffect(() => {
+    window.localStorage.setItem("OrganicFood", JSON.stringify(OrganicFood));
+    window.localStorage.setItem("Meat", JSON.stringify(Meat));
+    window.localStorage.setItem("FoodMiles", JSON.stringify(FoodMiles));
+    //const test = window.localStorage.getItem("SourceEnergy");
+    //console.log(test);
+  }, [OrganicFood, Meat, FoodMiles]);
+
   return (
     <div>
       <NavBar />

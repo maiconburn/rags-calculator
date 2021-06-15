@@ -9,10 +9,16 @@ import NavBar from "../components/NavBar";
 import Stepper from "../components/Steeper";
 
 export default function Cars() {
-  const [Cars, setCars] = React.useState();
-  const handleCars = (event, newCars) => {
-    setCars(newCars);
+  const [CarsMileage, setCarsMileage] = React.useState();
+  const handleCarsMileage = (event, newCarsMileage) => {
+    setCarsMileage(newCarsMileage);
   };
+
+  React.useEffect(() => {
+    window.localStorage.setItem("CarsMileage", JSON.stringify(CarsMileage));
+    //const test = window.localStorage.getItem("SourceEnergy");
+    //console.log(test);
+  }, [CarsMileage]);
   return (
     <div>
       <NavBar />
@@ -26,7 +32,7 @@ export default function Cars() {
         </Grid>
         <Grid item xs={12}>
           <Box my="2rem">
-            <ButtonIncrementDecrement start={0} />
+            <ButtonIncrementDecrement start={0} variable="cars" />
           </Box>
         </Grid>
         <Grid item xs={12}>
@@ -37,9 +43,9 @@ export default function Cars() {
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
             <ToggleButtonGroup
-              value={Cars}
+              value={CarsMileage}
               exclusive
-              onChange={handleCars}
+              onChange={handleCarsMileage}
               aria-label="Cars"
             >
               <ToggleButton value="C-low" size="large" aria-label="Very little">

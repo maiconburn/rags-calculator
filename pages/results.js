@@ -34,9 +34,39 @@ const useStyles = makeStyles((theme) => ({
 
 export default function results() {
   React.useEffect(() => {
-    const test = window.localStorage.getItem("peopleHousehold");
-    console.log(test);
+    const peopleHousehold = window.localStorage.getItem("peopleHousehold");
+    const SourceEnergy = window.localStorage.getItem("SourceEnergy");
+    const HouseSize = window.localStorage.getItem("HouseSize");
+    const OrganicFood = window.localStorage.getItem("OrganicFood");
+    const Meat = window.localStorage.getItem("Meat");
+    const FoodMiles = window.localStorage.getItem("FoodMiles");
+    const Composting = window.localStorage.getItem("Composting");
+    const Waste = window.localStorage.getItem("Waste");
+    const RecycleMix = window.localStorage.getItem("RecycleMix");
+    const RecyclePlastic = window.localStorage.getItem("RecyclePlastic");
+    const Cars = window.localStorage.getItem("Cars");
+    const CarsMileage = window.localStorage.getItem("CarsMileage");
+    const PublicTransport = window.localStorage.getItem("PublicTransport");
+    const Flights = window.localStorage.getItem("Flights");
+
+    console.log(
+      peopleHousehold,
+      SourceEnergy,
+      HouseSize,
+      OrganicFood,
+      Meat,
+      FoodMiles,
+      Composting,
+      Waste,
+      RecycleMix,
+      RecyclePlastic,
+      Cars,
+      CarsMileage,
+      PublicTransport,
+      Flights
+    );
   }, []);
+
   const classes = useStyles();
   return (
     <div>

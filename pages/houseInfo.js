@@ -12,13 +12,19 @@ export default function houseInfo() {
   const [HouseSize, setHouseSize] = React.useState();
 
   const handleSourceEnergy = (event, newSourceEnergy) => {
-    console.log(event);
     setSourceEnergy(newSourceEnergy);
   };
 
   const handleHouseSize = (event, newHouseSize) => {
     setHouseSize(newHouseSize);
   };
+
+  React.useEffect(() => {
+    window.localStorage.setItem("SourceEnergy", JSON.stringify(SourceEnergy));
+    window.localStorage.setItem("HouseSize", JSON.stringify(HouseSize));
+    //const test = window.localStorage.getItem("SourceEnergy");
+    //console.log(test);
+  }, [SourceEnergy, HouseSize]);
 
   return (
     <div>

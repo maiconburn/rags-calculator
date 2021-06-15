@@ -23,10 +23,22 @@ export default function Food() {
   const handleRecycleMix = (event, newRecycleMix) => {
     setRecycleMix(newRecycleMix);
   };
-
   const handleRecyclePlastic = (event, newRecyclePlastic) => {
     setRecyclePlastic(newRecyclePlastic);
   };
+
+  React.useEffect(() => {
+    window.localStorage.setItem("Composting", JSON.stringify(Composting));
+    window.localStorage.setItem("Waste", JSON.stringify(Waste));
+    window.localStorage.setItem("RecycleMix", JSON.stringify(RecycleMix));
+    window.localStorage.setItem(
+      "RecyclePlastic",
+      JSON.stringify(RecyclePlastic)
+    );
+    //const test = window.localStorage.getItem("SourceEnergy");
+    //console.log(test);
+  }, [Composting, Waste, RecycleMix, RecyclePlastic]);
+
   return (
     <div>
       <NavBar />
