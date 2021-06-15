@@ -49,11 +49,12 @@ export default function results() {
     const Flights = window.localStorage.getItem("Flights");
 
     //Categories definition
-    const WasteImpact = 0;
     const RecycleImpact = 0;
     const CarsImpact = 0;
     const PublicTransportImpact = 0;
     const FlightsImpact = 0;
+
+    //EnergyImpact calculation
 
     var ElectricEnergyConsumption = 0;
     var GasEnergyConsumption = 0;
@@ -106,6 +107,8 @@ export default function results() {
 
       console.log("Energy Impact", EnergyImpact);
     }
+
+    //FoodImpact calculation
 
     var OrganicFoodImpact = 0;
 

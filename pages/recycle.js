@@ -2,7 +2,6 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import Tooltip from "@material-ui/core/Tooltip";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import Typography from "@material-ui/core/Typography";
