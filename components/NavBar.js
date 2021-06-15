@@ -48,8 +48,6 @@ export default function NavBar() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  console.log(router);
-
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
