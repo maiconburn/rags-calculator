@@ -33,6 +33,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function results() {
+  React.useEffect(() => {
+    const test = window.localStorage.getItem("peopleHousehold");
+    console.log(test);
+  }, []);
   const classes = useStyles();
   return (
     <div>
