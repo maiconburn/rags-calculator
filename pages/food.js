@@ -11,6 +11,7 @@ export default function Food() {
   const [OrganicFood, setOrganicFood] = React.useState();
   const [Meat, setMeat] = React.useState();
   const [FoodMiles, setFoodMiles] = React.useState();
+  const [Waste, setWaste] = React.useState();
 
   const handleOrganicFood = (event, newOrganicFood) => {
     setOrganicFood(newOrganicFood);
@@ -21,14 +22,18 @@ export default function Food() {
   const handleFoodMiles = (event, newFoodMiles) => {
     setFoodMiles(newFoodMiles);
   };
+  const handleWaste = (event, newWaste) => {
+    setWaste(newWaste);
+  };
 
   React.useEffect(() => {
     window.localStorage.setItem("OrganicFood", OrganicFood);
     window.localStorage.setItem("Meat", Meat);
     window.localStorage.setItem("FoodMiles", FoodMiles);
+    window.localStorage.setItem("Waste", JSON.stringify(Waste));
     //const test = window.localStorage.getItem("SourceEnergy");
     //console.log(test);
-  }, [OrganicFood, Meat, FoodMiles]);
+  }, [OrganicFood, Meat, FoodMiles, Waste]);
 
   return (
     <div>
@@ -129,6 +134,46 @@ export default function Food() {
               </ToggleButton>
               <ToggleButton value="FM-all" size="large" aria-label="Almost all">
                 <span>All</span>
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Box my="2rem">
+            <Typography variant="h5" align="center">
+              How much of your food do you waste?
+            </Typography>
+          </Box>
+          <Box my="2rem" display="flex" justifyContent="center">
+            <ToggleButtonGroup
+              value={Waste}
+              exclusive
+              onChange={handleWaste}
+              aria-label="Waste"
+            >
+              <ToggleButton
+                value="W-above"
+                size="large"
+                aria-label="Above average"
+              >
+                <span>Less than 5%</span>
+              </ToggleButton>
+              <ToggleButton
+                value="W-below"
+                size="large"
+                aria-label="Below-average"
+              >
+                <span>Less than 10%</span>
+              </ToggleButton>
+              <ToggleButton value="W-average" size="large" aria-label="Average">
+                <span>Less than 25%</span>
+              </ToggleButton>
+              <ToggleButton
+                value="W-above"
+                size="large"
+                aria-label="Above-average"
+              >
+                <span>25% or more</span>
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>
