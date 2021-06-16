@@ -25,9 +25,9 @@ export default function Flights() {
         </Grid>
         <Grid item xs={12}>
           <Stepper
-            stepsNumber={8}
+            stepsNumber={9}
             actualStep={6}
-            nextStep="userInfo"
+            nextStep="miscellaneous"
             previousStep="publicTransport"
           />
         </Grid>

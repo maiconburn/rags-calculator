@@ -118,7 +118,7 @@ export default function houseInfo() {
         </Box>
         <Grid item xs={12}>
           <Stepper
-            stepsNumber={8}
+            stepsNumber={9}
             actualStep={1}
             nextStep="food"
             previousStep="/"

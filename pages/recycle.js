@@ -75,7 +75,7 @@ export default function Recycle() {
         </Grid>
         <Grid item xs={12}>
           <Stepper
-            stepsNumber={8}
+            stepsNumber={9}
             actualStep={3}
             nextStep="cars"
             previousStep="food"

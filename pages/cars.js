@@ -66,7 +66,7 @@ export default function Cars() {
         </Grid>
         <Grid item xs={12}>
           <Stepper
-            stepsNumber={8}
+            stepsNumber={9}
             actualStep={4}
             nextStep="publicTransport"
             previousStep="recycle"

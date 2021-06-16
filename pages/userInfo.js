@@ -74,8 +74,8 @@ export default function userInfo() {
         </Grid>
         <Grid item xs={12}>
           <Stepper
-            stepsNumber={8}
-            actualStep={7}
+            stepsNumber={9}
+            actualStep={8}
             nextStep="/"
             previousStep="flights"
           />

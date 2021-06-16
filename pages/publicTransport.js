@@ -25,7 +25,7 @@ export default function PublicTransport() {
         </Grid>
         <Grid item xs={12}>
           <Stepper
-            stepsNumber={8}
+            stepsNumber={9}
             actualStep={5}
             nextStep="flights"
             previousStep="cars"

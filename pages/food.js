@@ -184,7 +184,7 @@ export default function Food() {
         </Grid>
         <Grid item xs={12}>
           <Stepper
-            stepsNumber={8}
+            stepsNumber={9}
             actualStep={2}
             nextStep="recycle"
             previousStep="houseInfo"
