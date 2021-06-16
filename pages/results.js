@@ -48,11 +48,6 @@ export default function results() {
     const PublicTransport = window.localStorage.getItem("PublicTransport");
     const Flights = window.localStorage.getItem("Flights");
 
-    //Categories definition
-    const CarsImpact = 0;
-    const PublicTransportImpact = 0;
-    const FlightsImpact = 0;
-
     //EnergyImpact calculation
 
     var ElectricEnergyConsumption = 0;
@@ -237,6 +232,23 @@ export default function results() {
       Math.round((100 * CarsMileageImpact * 0.0143) / mpg / 100) * Cars;
 
     console.log("Cars Impact", CarsImpact);
+
+    //PublicTransport calculation
+
+    const PublicTransportTotalMil = PublicTransport * 48;
+
+    const PublicTransportImpact =
+      Math.round(PublicTransportTotalMil * 0.0001 * 100) / 100;
+
+    console.log("Public Transport Impact", PublicTransportImpact);
+
+    //Flights calculation
+
+    const PublicTransportTotalMil = PublicTransport * 48;
+
+    const FlightsImpact = Flights * 0.25;
+
+    console.log("Flights Impact", FlightsImpact);
 
     console.log(
       peopleHousehold,
