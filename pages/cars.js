@@ -15,7 +15,7 @@ export default function Cars() {
   };
 
   React.useEffect(() => {
-    window.localStorage.setItem("CarsMileage", JSON.stringify(CarsMileage));
+    window.localStorage.setItem("CarsMileage", CarsMileage);
     //const test = window.localStorage.getItem("SourceEnergy");
     //console.log(test);
   }, [CarsMileage]);
@@ -46,7 +46,7 @@ export default function Cars() {
               value={CarsMileage}
               exclusive
               onChange={handleCarsMileage}
-              aria-label="Cars"
+              aria-label="Cars Mileage"
             >
               <ToggleButton value="C-low" size="large" aria-label="Very little">
                 <span>Up to 5,000 miles</span>
