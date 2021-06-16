@@ -8,17 +8,6 @@ import NavBar from "../components/NavBar";
 import Button from "@material-ui/core/Button";
 import EcoIcon from "@material-ui/icons/Eco";
 
-const data = {
-  labels: ["Red", "Green", "Yellow"],
-  datasets: [
-    {
-      data: [300, 50, 100],
-      backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-      hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-    },
-  ],
-};
-
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
@@ -33,7 +22,42 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function results() {
+  const [EnergyImpact, setEnergyImpact] = React.useState();
+  const [FoodImpact, setFoodImpact] = React.useState();
+  const [RecycleImpact, setRecycleImpact] = React.useState();
+  const [CarsImpact, setCarsImpact] = React.useState();
+  const [PublicTransportImpact, setPublicTransportImpact] = React.useState();
+  const [FlightsImpact, setFlightsImpact] = React.useState();
   const [TotalCO2, setTotalCO2] = React.useState();
+
+  const data = {
+    labels: ["Energy", "Food", "Cars", "Public Transport", "Flights"],
+    datasets: [
+      {
+        data: [
+          EnergyImpact,
+          FoodImpact,
+          CarsImpact,
+          PublicTransportImpact,
+          FlightsImpact,
+        ],
+        backgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "#FF4456",
+          "#004456",
+        ],
+        hoverBackgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "#FF5556",
+          "#335556",
+        ],
+      },
+    ],
+  };
 
   React.useEffect(() => {
     const peopleHousehold = window.localStorage.getItem("peopleHousehold");
@@ -54,7 +78,6 @@ export default function results() {
 
     var ElectricEnergyConsumption = 0;
     var GasEnergyConsumption = 0;
-    var EnergyImpact = 0;
 
     if (SourceEnergy == "electricity") {
       switch (HouseSize) {
@@ -101,9 +124,7 @@ export default function results() {
         Math.round(GasEnergyConsumption * 0.000203 * 100) / 100;
       const PersonalEnergyImpact = HouseEnergyImpact / peopleHousehold;
 
-      EnergyImpact = PersonalEnergyImpact;
-
-      console.log("Energy Impact", EnergyImpact);
+      setEnergyImpact(PersonalEnergyImpact);
     }
 
     //FoodImpact calculation
@@ -179,11 +200,9 @@ export default function results() {
         break;
     }
 
-    const FoodImpact =
-      Math.round(OrganicFoodImpact + MeatImpact + FoodMilesImpact) *
-      WasteImpact;
-
-    console.log("Food Impact", FoodImpact);
+    setFoodImpact(
+      Math.round(OrganicFoodImpact + MeatImpact + FoodMilesImpact) * WasteImpact
+    );
 
     //RecycleImpact calculation
 
@@ -209,10 +228,7 @@ export default function results() {
         break;
     }
 
-    const RecycleImpact =
-      -(0.7 * RecycleMixImpact) - 0.14 * RecyclePlasticImpact;
-
-    console.log("Recycle Impact", RecycleImpact);
+    setRecycleImpact(-(0.7 * RecycleMixImpact) - 0.14 * RecyclePlasticImpact);
 
     //CarsImpact calculation
 
@@ -232,8 +248,9 @@ export default function results() {
 
     const mpg = 52;
 
-    const CarsImpact =
-      Math.round((100 * CarsMileageImpact * 0.0143) / mpg / 100) * Cars;
+    setCarsImpact(
+      Math.round((100 * CarsMileageImpact * 0.0143) / mpg / 100) * Cars
+    );
 
     console.log("Cars Impact", CarsImpact);
 
@@ -241,16 +258,13 @@ export default function results() {
 
     const PublicTransportTotalMil = PublicTransport * 48;
 
-    const PublicTransportImpact =
-      Math.round(PublicTransportTotalMil * 0.0001 * 100) / 100;
-
-    console.log("Public Transport Impact", PublicTransportImpact);
+    setPublicTransportImpact(
+      Math.round(PublicTransportTotalMil * 0.0001 * 100) / 100
+    );
 
     //Flights calculation
 
-    const FlightsImpact = Flights * 0.25;
-
-    console.log("Flights Impact", FlightsImpact);
+    setFlightsImpact(Flights * 0.25);
 
     setTotalCO2(
       EnergyImpact +
@@ -258,7 +272,8 @@ export default function results() {
         RecycleImpact +
         CarsImpact +
         PublicTransportImpact +
-        FlightsImpact
+        FlightsImpact +
+        1.1
     );
 
     console.log("Your total Impact is:", TotalCO2);
