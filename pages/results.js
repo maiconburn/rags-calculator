@@ -215,6 +215,29 @@ export default function results() {
 
     console.log("Recycle Impact", RecycleImpact);
 
+    //CarsImpact calculation
+
+    var CarsMileageImpact = 0;
+
+    switch (CarsMileage) {
+      case "OF-low":
+        CarsMileageImpact = 5000;
+        break;
+      case "C-average":
+        CarsMileageImpact = 10000;
+        break;
+      case "C-above":
+        CarsMileageImpact = 15000;
+        break;
+    }
+
+    const mpg = 52;
+
+    CarsImpact =
+      Math.round((100 * CarsMileageImpact * 0.0143) / mpg / 100) * Cars;
+
+    console.log("Cars Impact", CarsImpact);
+
     console.log(
       peopleHousehold,
       SourceEnergy,
