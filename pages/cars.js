@@ -32,7 +32,7 @@ export default function Cars() {
         </Grid>
         <Grid item xs={12}>
           <Box my="2rem">
-            <ButtonIncrementDecrement start={0} variable="cars" />
+            <ButtonIncrementDecrement start={0} variable="Cars" />
           </Box>
         </Grid>
         <Grid item xs={12}>

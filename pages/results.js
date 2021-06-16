@@ -33,6 +33,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function results() {
+  const [TotalCO2, setTotalCO2] = React.useState();
+
   React.useEffect(() => {
     const peopleHousehold = window.localStorage.getItem("peopleHousehold");
     const SourceEnergy = window.localStorage.getItem("SourceEnergy");
@@ -52,6 +54,7 @@ export default function results() {
 
     var ElectricEnergyConsumption = 0;
     var GasEnergyConsumption = 0;
+    var EnergyImpact = 0;
 
     if (SourceEnergy == "electricity") {
       switch (HouseSize) {
@@ -98,7 +101,7 @@ export default function results() {
         Math.round(GasEnergyConsumption * 0.000203 * 100) / 100;
       const PersonalEnergyImpact = HouseEnergyImpact / peopleHousehold;
 
-      const EnergyImpact = PersonalEnergyImpact;
+      EnergyImpact = PersonalEnergyImpact;
 
       console.log("Energy Impact", EnergyImpact);
     }
@@ -177,7 +180,8 @@ export default function results() {
     }
 
     const FoodImpact =
-      (OrganicFoodImpact + MeatImpact + FoodMilesImpact) * WasteImpact;
+      Math.round(OrganicFoodImpact + MeatImpact + FoodMilesImpact) *
+      WasteImpact;
 
     console.log("Food Impact", FoodImpact);
 
@@ -228,7 +232,7 @@ export default function results() {
 
     const mpg = 52;
 
-    CarsImpact =
+    const CarsImpact =
       Math.round((100 * CarsMileageImpact * 0.0143) / mpg / 100) * Cars;
 
     console.log("Cars Impact", CarsImpact);
@@ -247,6 +251,21 @@ export default function results() {
     const FlightsImpact = Flights * 0.25;
 
     console.log("Flights Impact", FlightsImpact);
+
+    setTotalCO2(
+      EnergyImpact +
+        FoodImpact +
+        RecycleImpact +
+        CarsImpact +
+        PublicTransportImpact +
+        FlightsImpact
+    );
+
+    console.log("Your total Impact is:", TotalCO2);
+
+    //const HowManyCreditsBuy = TotalCO2.toFixed(0);
+
+    //console.log("You should buy:", HowManyCreditsBuy, "Carbon Credits");
 
     console.log(
       peopleHousehold,
@@ -278,7 +297,7 @@ export default function results() {
           </Box>
           <Box my="2rem">
             <Typography variant="h3" align="center">
-              200 tonnes CO2
+              {TotalCO2} tonnes CO2
             </Typography>
           </Box>
           <Box
