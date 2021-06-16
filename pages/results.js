@@ -244,8 +244,6 @@ export default function results() {
 
     //Flights calculation
 
-    const PublicTransportTotalMil = PublicTransport * 48;
-
     const FlightsImpact = Flights * 0.25;
 
     console.log("Flights Impact", FlightsImpact);
