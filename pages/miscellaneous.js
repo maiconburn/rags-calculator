@@ -6,6 +6,7 @@ import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import Typography from "@material-ui/core/Typography";
 import Stepper from "../components/Steeper";
+import styles from "../styles/Miscellaneous.module.scss";
 
 export default function Food() {
   const [Miscellaneous, setMiscellaneous] = React.useState();
@@ -42,24 +43,52 @@ export default function Food() {
                 size="large"
                 aria-label="Above average"
               >
-                Above average
+                <Grid container>
+                  <Grid item xs={12}>
+                    Above average
+                  </Grid>
+                  <Grid item xs={12} className={styles.buttonDescription}>
+                    Teste
+                  </Grid>
+                </Grid>
               </ToggleButton>
               <ToggleButton value="M-average" size="large" aria-label="Average">
-                Average
+                <Grid container>
+                  <Grid item xs={12}>
+                    Average
+                  </Grid>
+                  <Grid item xs={12} className={styles.buttonDescription}>
+                    Teste
+                  </Grid>
+                </Grid>
               </ToggleButton>
               <ToggleButton
                 value="M-below"
                 size="large"
                 aria-label="Below average"
               >
-                Below average
+                <Grid container>
+                  <Grid item xs={12}>
+                    Below average
+                  </Grid>
+                  <Grid item xs={12} className={styles.buttonDescription}>
+                    Teste
+                  </Grid>
+                </Grid>
               </ToggleButton>
               <ToggleButton
                 value="M-much-below"
                 size="large"
                 aria-label="Much below average"
               >
-                Much below average
+                <Grid container>
+                  <Grid item xs={12}>
+                    Much below average
+                  </Grid>
+                  <Grid item xs={12} className={styles.buttonDescription}>
+                    Teste
+                  </Grid>
+                </Grid>
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>

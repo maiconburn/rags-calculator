@@ -28,10 +28,27 @@ export default function results() {
   const [CarsImpact, setCarsImpact] = React.useState();
   const [PublicTransportImpact, setPublicTransportImpact] = React.useState();
   const [FlightsImpact, setFlightsImpact] = React.useState();
-  const [TotalCO2, setTotalCO2] = React.useState();
+  const [MiscellaneousImpact, setMiscellaneousImpact] = React.useState();
+
+  const TotalCO2 =
+    EnergyImpact +
+    FoodImpact +
+    RecycleImpact +
+    CarsImpact +
+    PublicTransportImpact +
+    FlightsImpact +
+    MiscellaneousImpact +
+    1.1;
 
   const data = {
-    labels: ["Energy", "Food", "Cars", "Public Transport", "Flights"],
+    labels: [
+      "Energy",
+      "Food",
+      "Cars",
+      "Public Transport",
+      "Flights",
+      "Miscellaneous",
+    ],
     datasets: [
       {
         data: [
@@ -40,6 +57,7 @@ export default function results() {
           CarsImpact,
           PublicTransportImpact,
           FlightsImpact,
+          MiscellaneousImpact,
         ],
         backgroundColor: [
           "#FF6384",
@@ -47,6 +65,7 @@ export default function results() {
           "#FFCE56",
           "#FF4456",
           "#004456",
+          "#004400",
         ],
         hoverBackgroundColor: [
           "#FF6384",
@@ -54,6 +73,7 @@ export default function results() {
           "#FFCE56",
           "#FF5556",
           "#335556",
+          "#335500",
         ],
       },
     ],
@@ -73,6 +93,7 @@ export default function results() {
     const CarsMileage = window.localStorage.getItem("CarsMileage");
     const PublicTransport = window.localStorage.getItem("PublicTransport");
     const Flights = window.localStorage.getItem("Flights");
+    const Miscellaneous = window.localStorage.getItem("Miscellaneous");
 
     //EnergyImpact calculation
 
@@ -266,15 +287,26 @@ export default function results() {
 
     setFlightsImpact(Flights * 0.25);
 
-    setTotalCO2(
-      EnergyImpact +
-        FoodImpact +
-        RecycleImpact +
-        CarsImpact +
-        PublicTransportImpact +
-        FlightsImpact +
-        1.1
-    );
+    //Miscellaneous calculation
+
+    let MiscellaneousCo2Impact = 0;
+
+    switch (Miscellaneous) {
+      case "M-above":
+        MiscellaneousCo2Impact = 5;
+        break;
+      case "M-below":
+        MiscellaneousCo2Impact = 3.4;
+        break;
+      case "M-average":
+        MiscellaneousCo2Impact = 2.4;
+        break;
+      case "M-much-below":
+        MiscellaneousCo2Impact = 1.4;
+        break;
+    }
+
+    setMiscellaneousImpact(MiscellaneousCo2Impact);
 
     console.log("Your total Impact is:", TotalCO2);
 
@@ -295,7 +327,14 @@ export default function results() {
       Cars,
       CarsMileage,
       PublicTransport,
-      Flights
+      Flights,
+      EnergyImpact,
+      FoodImpact,
+      RecycleImpact,
+      CarsImpact,
+      PublicTransportImpact,
+      FlightsImpact,
+      MiscellaneousImpact
     );
   }, []);
 
@@ -303,7 +342,7 @@ export default function results() {
   return (
     <div>
       <NavBar />
-      <Grid container>
+      <Grid container direction="column" justify="center" alignItems="center">
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h2" align="center">
@@ -341,15 +380,25 @@ export default function results() {
             </form>
           </Box>
         </Grid>
-        <Box my="2rem">
-          <Typography variant="h3" align="center">
-            Chart
+        <Box
+          my="1rem"
+          xs={12}
+          direction="column"
+          justify="center"
+          alignItems="center"
+        >
+          <Typography variant="h5" align="center">
+            Check out the chart below how your carbon emissions are distributed
           </Typography>
-          <Box direction="column" justify="center" alignItems="center">
-            <Grid item xs={12}>
-              <Doughnut data={data} width={400} height={400} />
-            </Grid>
-          </Box>
+        </Box>
+        <Box
+          my="1rem"
+          xs={12}
+          direction="column"
+          justify="center"
+          alignItems="center"
+        >
+          <Doughnut data={data} width={400} height={400} />
         </Box>
         <Grid item xs={12}>
           <Box
