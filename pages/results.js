@@ -124,8 +124,7 @@ export default function results() {
         Math.round(ElectricEnergyConsumption * 0.000527 * 100) / 100;
       const PersonalEnergyImpact = HouseEnergyImpact / peopleHousehold;
 
-      const EnergyImpact = PersonalEnergyImpact;
-      console.log("Energy Impact", EnergyImpact);
+      setEnergyImpact(PersonalEnergyImpact);
     } else {
       switch (HouseSize) {
         case "small":
