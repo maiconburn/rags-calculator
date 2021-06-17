@@ -28,7 +28,7 @@ export default function Food() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              What is your miscellaneous spending?
+              How would you describe your overall spending habits?
             </Typography>
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
@@ -39,56 +39,28 @@ export default function Food() {
               aria-label="Miscellaneous"
             >
               <ToggleButton
-                value="M-above"
+                value="M-much-below"
                 size="large"
-                aria-label="Above average"
+                aria-label="Much below average"
               >
-                <Grid container>
-                  <Grid item xs={12}>
-                    Above average
-                  </Grid>
-                  <Grid item xs={12} className={styles.buttonDescription}>
-                    Teste
-                  </Grid>
-                </Grid>
-              </ToggleButton>
-              <ToggleButton value="M-average" size="large" aria-label="Average">
-                <Grid container>
-                  <Grid item xs={12}>
-                    Average
-                  </Grid>
-                  <Grid item xs={12} className={styles.buttonDescription}>
-                    Teste
-                  </Grid>
-                </Grid>
+                Frugal
               </ToggleButton>
               <ToggleButton
                 value="M-below"
                 size="large"
                 aria-label="Below average"
               >
-                <Grid container>
-                  <Grid item xs={12}>
-                    Below average
-                  </Grid>
-                  <Grid item xs={12} className={styles.buttonDescription}>
-                    Teste
-                  </Grid>
-                </Grid>
+                Average
+              </ToggleButton>
+              <ToggleButton value="M-average" size="large" aria-label="Average">
+                Spender
               </ToggleButton>
               <ToggleButton
-                value="M-much-below"
+                value="M-above"
                 size="large"
-                aria-label="Much below average"
+                aria-label="Above average"
               >
-                <Grid container>
-                  <Grid item xs={12}>
-                    Much below average
-                  </Grid>
-                  <Grid item xs={12} className={styles.buttonDescription}>
-                    Teste
-                  </Grid>
-                </Grid>
+                Big Spender
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>

@@ -70,7 +70,7 @@ export default function Food() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              How much meat/dairy do you eat?
+              How often do you eat meat or fish?
             </Typography>
           </Box>
           <Box my="2rem">
@@ -95,17 +95,17 @@ export default function Food() {
                 size="large"
                 aria-label="Below-average"
               >
-                <span>Below-average</span>
+                <span>1–2 times a week</span>
               </ToggleButton>
               <ToggleButton value="M-average" size="large" aria-label="Average">
-                <span>Average</span>
+                <span>Most meals</span>
               </ToggleButton>
               <ToggleButton
                 value="M-above"
                 size="large"
                 aria-label="Above-average"
               >
-                <span>Above-average</span>
+                <span>Every meal</span>
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>

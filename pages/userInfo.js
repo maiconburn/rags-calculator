@@ -78,7 +78,7 @@ export default function userInfo() {
             stepsNumber={9}
             actualStep={8}
             nextStep="/"
-            previousStep="flights"
+            previousStep="miscellaneous"
           />
         </Grid>
       </Grid>
