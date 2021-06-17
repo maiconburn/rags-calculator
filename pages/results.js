@@ -375,6 +375,7 @@ export default function results() {
                   className={classes.button}
                   startIcon={<EcoIcon />}
                   href={offsetLink}
+                  target="_blank"
                 >
                   Offset Now
                 </Button>
