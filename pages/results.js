@@ -352,7 +352,7 @@ export default function results() {
           </Box>
           <Box my="2rem">
             <Typography variant="h3" align="center">
-              {TotalCO2} tonnes CO2
+              {TotalCO2.toFixed(1)} tonnes CO2
             </Typography>
           </Box>
           <Box
