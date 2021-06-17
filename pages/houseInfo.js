@@ -94,21 +94,36 @@ export default function houseInfo() {
             aria-label="House size"
           >
             <ToggleButton value="small" size="large" aria-label="Small">
-              <Tooltip title="1 Room" aria-label="add">
-                <span>Small</span>
-              </Tooltip>
+              <Grid container>
+                <Grid item xs={12}>
+                  Small
+                </Grid>
+                <Grid item xs={12} className={styles.buttonDescription}>
+                  1 Bedroom
+                </Grid>
+              </Grid>
             </ToggleButton>
 
             <ToggleButton value="medium" size="large" aria-label="Medium">
-              <Tooltip title="2–3 Rooms" aria-label="add">
-                <span>Medium</span>
-              </Tooltip>
+              <Grid container>
+                <Grid item xs={12}>
+                  Medium
+                </Grid>
+                <Grid item xs={12} className={styles.buttonDescription}>
+                  2–3 Bedrooms
+                </Grid>
+              </Grid>
             </ToggleButton>
 
             <ToggleButton value="large" size="large" aria-label="Large">
-              <Tooltip title="4+ Rooms" aria-label="add">
-                <span>Large</span>
-              </Tooltip>
+              <Grid container>
+                <Grid item xs={12}>
+                  Large
+                </Grid>
+                <Grid item xs={12} className={styles.buttonDescription}>
+                  4+ Bedrooms
+                </Grid>
+              </Grid>
             </ToggleButton>
 
             <ToggleButton

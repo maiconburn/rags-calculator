@@ -61,7 +61,7 @@ export default function Flights() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              How many hours did you spent flying last year?
+              In a normal year, how many hours do you spend flying?
             </Typography>
           </Box>
         </Grid>

@@ -61,7 +61,7 @@ export default function PublicTransport() {
         <Grid item xs={12}>
           <Box my="2rem">
             <Typography variant="h5" align="center">
-              How many journeys by public transport do you do weekly?
+              How many miles do you travel on public transport weekly?
             </Typography>
           </Box>
         </Grid>
