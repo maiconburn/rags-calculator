@@ -81,7 +81,7 @@ export default function Index() {
             <Typography variant="h4" align="center">
               How many people are there in your household? <br />
               <Button onClick={handleOpen}>
-                <HelpOutlineIcon /> Info
+                <HelpOutlineIcon fontSize="small" /> Info
               </Button>
             </Typography>
           </Box>
