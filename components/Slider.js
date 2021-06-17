@@ -81,7 +81,7 @@ const marks = [
 
 const CustomSlider = withStyles({
   root: {
-    color: "#b1ca39",
+    color: "#185D24",
     height: 8,
     marginTop: "40px",
   },
@@ -121,10 +121,7 @@ export default function CustomizedSlider(props) {
   };
 
   React.useEffect(() => {
-    window.localStorage.setItem(props.variable, JSON.stringify(value));
-    console.log(props.variable, value);
-    const test = window.localStorage.getItem(props.variable);
-    console.log(test);
+    window.localStorage.setItem(props.variable, value);
   }, [value]);
 
   return (

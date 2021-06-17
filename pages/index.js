@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import ButtonIncrementDecrement from "../components/ButtonIncrementDecrement";
 import NavBar from "../components/NavBar";
 import Stepper from "../components/Steeper";
+import styles from "../styles/Index.module.scss";
 
 export default function Index() {
   return (

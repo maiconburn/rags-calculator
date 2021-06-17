@@ -30,7 +30,6 @@ export default function ButtonIncrementDecrement(props) {
     <Grid container>
       <Fab
         size="large"
-        color="secondary"
         onClick={handleDecrement}
         aria-label="add"
         className={styles.ButtonIncrement}
@@ -40,7 +39,6 @@ export default function ButtonIncrementDecrement(props) {
       <Typography className={styles.Counter}>{counter}</Typography>
       <Fab
         size="large"
-        color="secondary"
         onClick={handleIncrement}
         aria-label="add"
         className={styles.ButtonDecrement}

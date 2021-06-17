@@ -5,8 +5,32 @@
 
 .ButtonDecrement {
   margin-top: 4rem !important;
+  background-color: #185d24 !important;
+  color: #fff !important;
+  :hover {
+    background-color: #1f792f !important;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
 
 .ButtonIncrement {
   margin-top: 4rem !important;
+  background-color: #185d24 !important;
+  color: #fff !important;
+  :hover {
+    background-color: #1f792f !important;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }

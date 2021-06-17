@@ -8,6 +8,7 @@ import NavBar from "../components/NavBar";
 import Button from "@material-ui/core/Button";
 import EcoIcon from "@material-ui/icons/Eco";
 import Stepper from "../components/Steeper";
+import styles from "../styles/UserInfo.module.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {

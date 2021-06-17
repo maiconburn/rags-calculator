@@ -40,6 +40,11 @@ export default function results() {
     MiscellaneousImpact +
     1.1;
 
+  const HowManyCreditsBuy = TotalCO2.toFixed(0);
+
+  const offsetLink =
+    "https://carboncertify.com/?add-to-cart=79&quantity=" + HowManyCreditsBuy;
+
   const data = {
     labels: [
       "Energy",
@@ -308,10 +313,6 @@ export default function results() {
 
     setMiscellaneousImpact(MiscellaneousCo2Impact);
 
-    console.log("Your total Impact is:", TotalCO2);
-
-    //const HowManyCreditsBuy = TotalCO2.toFixed(0);
-
     //console.log("You should buy:", HowManyCreditsBuy, "Carbon Credits");
 
     console.log(
@@ -373,6 +374,7 @@ export default function results() {
                   size="large"
                   className={classes.button}
                   startIcon={<EcoIcon />}
+                  href={offsetLink}
                 >
                   Offset Now
                 </Button>

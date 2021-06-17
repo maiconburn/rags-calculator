@@ -7,6 +7,8 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
+import styles from "../styles/HouseInfo.module.scss";
+
 export default function houseInfo() {
   const [SourceEnergy, setSourceEnergy] = React.useState();
   const [HouseSize, setHouseSize] = React.useState();
@@ -47,6 +49,7 @@ export default function houseInfo() {
         </Box>
         <Box my="2rem">
           <ToggleButtonGroup
+            className={styles.toggleButtonGroup}
             value={SourceEnergy}
             exclusive
             onChange={handleSourceEnergy}
@@ -84,6 +87,7 @@ export default function houseInfo() {
         </Box>
         <Box my="2rem">
           <ToggleButtonGroup
+            className={styles.toggleButtonGroup}
             value={HouseSize}
             exclusive
             onChange={handleHouseSize}
