@@ -9,7 +9,6 @@ import Modal from "@material-ui/core/Modal";
 import Button from "@material-ui/core/Button";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import { makeStyles } from "@material-ui/core/styles";
-import styles from "../styles/Index.module.scss";
 
 function getModalStyle() {
   const top = 50;

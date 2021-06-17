@@ -21,6 +21,7 @@ function ButtonActive(props) {
       target={props.target}
       color={props.color}
       onClick={handleClick}
+      variant="contained"
     >
       {props.children}
     </Button>

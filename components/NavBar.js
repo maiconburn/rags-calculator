@@ -45,7 +45,12 @@ export default function NavBar() {
           </Button>
           <div className={classes.grow} />
           <div>
-            <ButtonActive buttonClass="buttonActive" color="inherit" href="/">
+            <ButtonActive
+              buttonClass="buttonActive"
+              variant="contained"
+              color="primary"
+              href="/"
+            >
               Restart
             </ButtonActive>
           </div>
