@@ -45,7 +45,7 @@ export default function userInfo() {
                   required
                   id="outlined-required"
                   label="Name"
-                  defaultValue="Hello World"
+                  defaultValue="Type your name"
                   variant="outlined"
                 />
               </Grid>
@@ -54,7 +54,7 @@ export default function userInfo() {
                   required
                   id="outlined-required"
                   label="Email"
-                  defaultValue="Hello World"
+                  defaultValue="Type your email"
                   variant="outlined"
                 />
               </Grid>
