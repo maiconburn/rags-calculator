@@ -21,7 +21,7 @@ export default function MyApp(props) {
   return (
     <>
       <Head>
-        <title>Rags.eco - Footprint Calculator</title>
+        <title>Carbon Certify - Footprint Calculator</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
