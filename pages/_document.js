@@ -9,6 +9,12 @@ export default class MyDocument extends Document {
       <Html lang="en-GB">
         <Head />
         <body>
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9FDG75"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+            }}
+          ></noscript>
           <Main />
           <NextScript />
         </body>
