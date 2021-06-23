@@ -44,8 +44,8 @@ export default function userInfo() {
                 <TextField
                   required
                   id="outlined-required"
-                  label="Name"
-                  defaultValue="Type your name"
+                  label="Type your full name"
+                  placeholder="Type your name"
                   variant="outlined"
                 />
               </Grid>
@@ -53,8 +53,17 @@ export default function userInfo() {
                 <TextField
                   required
                   id="outlined-required"
-                  label="Email"
-                  defaultValue="Type your email"
+                  label="Type your email"
+                  placeholder="Type your email"
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Type your phone number"
+                  placeholder="Type your phone number"
                   variant="outlined"
                 />
               </Grid>
