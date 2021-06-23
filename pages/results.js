@@ -101,7 +101,6 @@ export default function results() {
     const Miscellaneous = window.localStorage.getItem("Miscellaneous");
 
     //EnergyImpact calculation
-
     var ElectricEnergyConsumption = 0;
     var GasEnergyConsumption = 0;
 
