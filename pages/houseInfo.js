@@ -21,13 +21,9 @@ export default function houseInfo() {
     setHouseSize(newHouseSize);
   };
 
-<<<<<<< HEAD
-=======
   React.useEffect(() => {
     window.localStorage.setItem("SourceEnergy", SourceEnergy);
     window.localStorage.setItem("HouseSize", HouseSize);
-    //const test = window.localStorage.getItem("SourceEnergy");
-    //console.log(test);
   }, [SourceEnergy, HouseSize]);
 
   // // Gas + electricity question
@@ -76,7 +72,6 @@ export default function houseInfo() {
   //   </Grid>
   // );
 
->>>>>>> origin/info-modals
   return (
     <div>
       <NavBar />
