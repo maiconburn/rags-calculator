@@ -259,7 +259,7 @@ export default function results() {
     var CarsMileageImpact = 0;
 
     switch (CarsMileage) {
-      case "OF-low":
+      case "C-low":
         CarsMileageImpact = 5000;
         break;
       case "C-average":
