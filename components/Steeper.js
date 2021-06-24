@@ -11,13 +11,19 @@ export default function Stepper(props) {
   const router = useRouter();
   const theme = useTheme();
 
+  console.log(props.validation);
+
   const [activeStep, setActiveStep] = React.useState(props.actualStep);
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    router.push(props.nextStep, {
-      shallow: true,
-    });
+    if (props.validation == true) {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      router.push(props.nextStep, {
+        shallow: true,
+      });
+    } else {
+      alert("You must answer all questions to proceed!");
+    }
   };
 
   const handleBack = () => {

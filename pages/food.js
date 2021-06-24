@@ -12,6 +12,7 @@ export default function Food() {
   const [Meat, setMeat] = React.useState();
   const [FoodMiles, setFoodMiles] = React.useState();
   const [Waste, setWaste] = React.useState();
+  const [validationPass, setValidationPass] = React.useState(false);
 
   const handleOrganicFood = (event, newOrganicFood) => {
     setOrganicFood(newOrganicFood);
@@ -31,9 +32,15 @@ export default function Food() {
     window.localStorage.setItem("Meat", Meat);
     window.localStorage.setItem("FoodMiles", FoodMiles);
     window.localStorage.setItem("Waste", Waste);
-    //const test = window.localStorage.getItem("SourceEnergy");
-    //console.log(test);
-  }, [OrganicFood, Meat, FoodMiles, Waste]);
+    if (
+      OrganicFood != null &&
+      Meat != null &&
+      FoodMiles != null &&
+      Waste != null
+    ) {
+      setValidationPass(true);
+    }
+  }, [OrganicFood, Meat, FoodMiles, Waste, validationPass]);
 
   // // Organic food question modal
   // const modal1 = (
@@ -276,6 +283,7 @@ export default function Food() {
           <Stepper
             stepsNumber={9}
             actualStep={2}
+            validation={validationPass}
             nextStep="recycle"
             previousStep="houseInfo"
           />

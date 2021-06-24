@@ -10,15 +10,18 @@ import Stepper from "../components/Steeper";
 
 export default function Cars() {
   const [CarsMileage, setCarsMileage] = React.useState();
+  const [validationPass, setValidationPass] = React.useState(false);
+
   const handleCarsMileage = (event, newCarsMileage) => {
     setCarsMileage(newCarsMileage);
   };
 
   React.useEffect(() => {
     window.localStorage.setItem("CarsMileage", CarsMileage);
-    //const test = window.localStorage.getItem("SourceEnergy");
-    //console.log(test);
-  }, [CarsMileage]);
+    if (CarsMileage != null) {
+      setValidationPass(true);
+    }
+  }, [CarsMileage, validationPass]);
 
   // // Only the slider will have a modal button
   // const modal1 = (
@@ -91,6 +94,7 @@ export default function Cars() {
           <Stepper
             stepsNumber={9}
             actualStep={4}
+            validation={validationPass}
             nextStep="publicTransport"
             previousStep="recycle"
           />

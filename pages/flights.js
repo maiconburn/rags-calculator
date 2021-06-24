@@ -96,6 +96,7 @@ export default function Flights() {
             stepsNumber={9}
             actualStep={6}
             nextStep="miscellaneous"
+            validation={true}
             previousStep="publicTransport"
           />
         </Grid>

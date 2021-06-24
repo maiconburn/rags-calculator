@@ -10,6 +10,7 @@ import Stepper from "../components/Steeper";
 export default function Recycle() {
   const [RecycleMix, setRecycleMix] = React.useState();
   const [RecyclePlastic, setRecyclePlastic] = React.useState();
+  const [validationPass, setValidationPass] = React.useState(false);
 
   const handleRecycleMix = (event, newRecycleMix) => {
     setRecycleMix(newRecycleMix);
@@ -21,9 +22,10 @@ export default function Recycle() {
   React.useEffect(() => {
     window.localStorage.setItem("RecycleMix", RecycleMix);
     window.localStorage.setItem("RecyclePlastic", RecyclePlastic);
-    //const test = window.localStorage.getItem("SourceEnergy");
-    //console.log(test);
-  }, [RecycleMix, RecyclePlastic]);
+    if (RecycleMix != null && RecyclePlastic != null) {
+      setValidationPass(true);
+    }
+  }, [RecycleMix, RecyclePlastic, validationPass]);
 
   // // Recycling paper question modal
   // const modal1 = (
@@ -121,6 +123,7 @@ export default function Recycle() {
           <Stepper
             stepsNumber={9}
             actualStep={3}
+            validation={validationPass}
             nextStep="cars"
             previousStep="food"
           />

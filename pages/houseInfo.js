@@ -11,7 +11,7 @@ import styles from "../styles/HouseInfo.module.scss";
 export default function houseInfo() {
   const [SourceEnergy, setSourceEnergy] = React.useState();
   const [HouseSize, setHouseSize] = React.useState();
-  const [validationCountdown, setValidationCountdown] = React.useState(2);
+  const [validationPass, setValidationPass] = React.useState(false);
 
   const handleSourceEnergy = (event, newSourceEnergy) => {
     setSourceEnergy(newSourceEnergy);
@@ -24,7 +24,10 @@ export default function houseInfo() {
   React.useEffect(() => {
     window.localStorage.setItem("SourceEnergy", SourceEnergy);
     window.localStorage.setItem("HouseSize", HouseSize);
-  }, [SourceEnergy, HouseSize]);
+    if (SourceEnergy != null && HouseSize != null) {
+      setValidationPass(true);
+    }
+  }, [SourceEnergy, HouseSize, validationPass]);
 
   // // Gas + electricity question
   // const modal1 = (
@@ -183,7 +186,7 @@ export default function houseInfo() {
           <Stepper
             stepsNumber={9}
             actualStep={1}
-            validation={0}
+            validation={validationPass}
             nextStep="food"
             previousStep="/"
           />

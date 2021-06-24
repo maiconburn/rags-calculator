@@ -100,6 +100,7 @@ export default function PublicTransport() {
             stepsNumber={9}
             actualStep={5}
             nextStep="flights"
+            validation={true}
             previousStep="cars"
           />
         </Grid>

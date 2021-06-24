@@ -10,6 +10,7 @@ import styles from "../styles/Miscellaneous.module.scss";
 
 export default function Food() {
   const [Miscellaneous, setMiscellaneous] = React.useState();
+  const [validationPass, setValidationPass] = React.useState(false);
 
   const handleMiscellaneous = (event, newMiscellaneous) => {
     setMiscellaneous(newMiscellaneous);
@@ -17,9 +18,10 @@ export default function Food() {
 
   React.useEffect(() => {
     window.localStorage.setItem("Miscellaneous", Miscellaneous);
-    //const test = window.localStorage.getItem("SourceEnergy");
-    //console.log(test);
-  }, [Miscellaneous]);
+    if (Miscellaneous != null) {
+      setValidationPass(true);
+    }
+  }, [Miscellaneous, validationPass]);
 
   // // Miscellaneous spending question
   // const modal1 = (
@@ -94,6 +96,7 @@ export default function Food() {
           <Stepper
             stepsNumber={9}
             actualStep={7}
+            validation={validationPass}
             nextStep="userInfo"
             previousStep="flights"
           />
