@@ -21,6 +21,62 @@ export default function houseInfo() {
     setHouseSize(newHouseSize);
   };
 
+<<<<<<< HEAD
+=======
+  React.useEffect(() => {
+    window.localStorage.setItem("SourceEnergy", SourceEnergy);
+    window.localStorage.setItem("HouseSize", HouseSize);
+    //const test = window.localStorage.getItem("SourceEnergy");
+    //console.log(test);
+  }, [SourceEnergy, HouseSize]);
+
+  // // Gas + electricity question
+  // const modal1 = (
+  //   <Grid
+  //     container
+  //     direction="column"
+  //     justify="center"
+  //     alignItems="center"
+  //     style={modalStyle}
+  //     className={classes.paper}
+  //   >
+  //     <p id="simple-modal-description">
+  //       You produce greenhouse gas emissions when using electricity and gas in
+  //       the home. We will estimate your electricity and gas output using the
+  //       size of your home.
+  //     </p>
+  //     <Grid item>
+  //       <Button variant="contained" color="primary" onClick={handleClose}>
+  //         Close
+  //       </Button>
+  //     </Grid>
+  //   </Grid>
+  // );
+
+  // // House size question
+  // const modal2 = (
+  //   <Grid
+  //     container
+  //     direction="column"
+  //     justify="center"
+  //     alignItems="center"
+  //     style={modalStyle}
+  //     className={classes.paper}
+  //   >
+  //     <p id="simple-modal-description">
+  //       We measure your estimated electricity and gas output by the number of
+  //       rooms in your home. (small = 1 bedroom, medium = 2–3 bedrooms, large =
+  //       4+ bedrooms)
+  //     </p>
+  //     <Grid item>
+  //       <Button variant="contained" color="primary" onClick={handleClose}>
+  //         Close
+  //       </Button>
+  //     </Grid>
+  //   </Grid>
+  // );
+
+>>>>>>> origin/info-modals
   return (
     <div>
       <NavBar />

@@ -19,6 +19,29 @@ export default function Cars() {
     //const test = window.localStorage.getItem("SourceEnergy");
     //console.log(test);
   }, [CarsMileage]);
+
+  // // Only the slider will have a modal button
+  // const modal1 = (
+  //   <Grid
+  //     container
+  //     direction="column"
+  //     justify="center"
+  //     alignItems="center"
+  //     style={modalStyle}
+  //     className={classes.paper}
+  //   >
+  //     <p id="simple-modal-description">
+  //       Don’t include any miles you travel while at work in your input, this
+  //       will be covered as business miles in your company's footprint.
+  //     </p>
+  //     <Grid item>
+  //       <Button variant="contained" color="primary" onClick={handleClose}>
+  //         Close
+  //       </Button>
+  //     </Grid>
+  //   </Grid>
+  // );
+
   return (
     <div>
       <NavBar />

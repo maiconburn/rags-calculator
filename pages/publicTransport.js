@@ -54,6 +54,26 @@ const marks = [
 ];
 
 export default function PublicTransport() {
+  // const modal1 = (
+  //   <Grid
+  //     container
+  //     direction="column"
+  //     justify="center"
+  //     alignItems="center"
+  //     style={modalStyle}
+  //     className={classes.paper}
+  //   >
+  //     <p id="simple-modal-description">
+  //       This includes any bus or train miles travelled. We will use your weekly
+  //       average to estimate your year's travel emissions.
+  //     </p>
+  //     <Grid item>
+  //       <Button variant="contained" color="primary" onClick={handleClose}>
+  //         Close
+  //       </Button>
+  //     </Grid>
+  //   </Grid>
+  // );
   return (
     <div>
       <NavBar />

@@ -25,6 +25,50 @@ export default function Recycle() {
     //console.log(test);
   }, [RecycleMix, RecyclePlastic]);
 
+  // // Recycling paper question modal
+  // const modal1 = (
+  //   <Grid
+  //     container
+  //     direction="column"
+  //     justify="center"
+  //     alignItems="center"
+  //     style={modalStyle}
+  //     className={classes.paper}
+  //   >
+  //     <p id="simple-modal-description">
+  //       Increasing the lifecycle of materials will result in less CO2 emissions,
+  //       rather than producing new materials each time a product is manufactured.
+  //     </p>
+  //     <Grid item>
+  //       <Button variant="contained" color="primary" onClick={handleClose}>
+  //         Close
+  //       </Button>
+  //     </Grid>
+  //   </Grid>
+  // );
+
+  // // Recycling plastic question
+  // const modal2 = (
+  //   <Grid
+  //     container
+  //     direction="column"
+  //     justify="center"
+  //     alignItems="center"
+  //     style={modalStyle}
+  //     className={classes.paper}
+  //   >
+  //     <p id="simple-modal-description">
+  //       Increasing the lifecycle of materials will result in less CO2 emissions,
+  //       rather than producing new materials each time a product is manufactured.
+  //     </p>
+  //     <Grid item>
+  //       <Button variant="contained" color="primary" onClick={handleClose}>
+  //         Close
+  //       </Button>
+  //     </Grid>
+  //   </Grid>
+  // );
+
   return (
     <div>
       <NavBar />
