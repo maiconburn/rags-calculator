@@ -35,91 +35,95 @@ export default function Food() {
     //console.log(test);
   }, [OrganicFood, Meat, FoodMiles, Waste]);
 
-  const modal1 = (
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-      style={modalStyle}
-      className={classes.paper}
-    >
-      <p id="simple-modal-description">
-        Non-organic foods will output more carbon dioxide into the atmosphere.
-        This is because the fertiliser used to grow non-organic foods requires
-        manufacturing and transporting. There will also be an increase in
-        greenhouse gases through the nitrous oxide released by the fertiliser.
-      </p>
-      <Grid item>
-        <Button variant="contained" color="primary" onClick={handleClose}>
-          Close
-        </Button>
-      </Grid>
-    </Grid>
-  );
+  // // Organic food question modal
+  // const modal1 = (
+  //   <Grid
+  //     container
+  //     direction="column"
+  //     justify="center"
+  //     alignItems="center"
+  //     style={modalStyle}
+  //     className={classes.paper}
+  //   >
+  //     <p id="simple-modal-description">
+  //       Non-organic foods will output more carbon dioxide into the atmosphere.
+  //       This is because the fertiliser used to grow non-organic foods requires
+  //       manufacturing and transporting. There will also be an increase in
+  //       greenhouse gases through the nitrous oxide released by the fertiliser.
+  //     </p>
+  //     <Grid item>
+  //       <Button variant="contained" color="primary" onClick={handleClose}>
+  //         Close
+  //       </Button>
+  //     </Grid>
+  //   </Grid>
+  // );
 
-  const modal2 = (
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-      style={modalStyle}
-      className={classes.paper}
-    >
-      <p id="simple-modal-description">
-        Meat and dairy consumption will increase methane in the atmosphere from
-        the animals and slurry. Carbon dioxide emissions will also be higher
-        from the machinery used to farm the animals.
-      </p>
-      <Grid item>
-        <Button variant="contained" color="primary" onClick={handleClose}>
-          Close
-        </Button>
-      </Grid>
-    </Grid>
-  );
+  // // Meat/dairy question modal
+  // const modal2 = (
+  //   <Grid
+  //     container
+  //     direction="column"
+  //     justify="center"
+  //     alignItems="center"
+  //     style={modalStyle}
+  //     className={classes.paper}
+  //   >
+  //     <p id="simple-modal-description">
+  //       Meat and dairy consumption will increase methane in the atmosphere from
+  //       the animals and slurry. Carbon dioxide emissions will also be higher
+  //       from the machinery used to farm the animals.
+  //     </p>
+  //     <Grid item>
+  //       <Button variant="contained" color="primary" onClick={handleClose}>
+  //         Close
+  //       </Button>
+  //     </Grid>
+  //   </Grid>
+  // );
 
-  const modal3 = (
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-      style={modalStyle}
-      className={classes.paper}
-    >
-      <p id="simple-modal-description">
-        Less miles travelled by the food will mean less carbon dixoide is
-        released during transport.
-      </p>
-      <Grid item>
-        <Button variant="contained" color="primary" onClick={handleClose}>
-          Close
-        </Button>
-      </Grid>
-    </Grid>
-  );
+  // // Local food question modal
+  // const modal3 = (
+  //   <Grid
+  //     container
+  //     direction="column"
+  //     justify="center"
+  //     alignItems="center"
+  //     style={modalStyle}
+  //     className={classes.paper}
+  //   >
+  //     <p id="simple-modal-description">
+  //       Less miles travelled by the food will mean less carbon dixoide is
+  //       released during transport.
+  //     </p>
+  //     <Grid item>
+  //       <Button variant="contained" color="primary" onClick={handleClose}>
+  //         Close
+  //       </Button>
+  //     </Grid>
+  //   </Grid>
+  // );
 
-  const modal4 = (
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-      style={modalStyle}
-      className={classes.paper}
-    >
-      <p id="simple-modal-description">
-        Food that is put into landfill generates methane.
-      </p>
-      <Grid item>
-        <Button variant="contained" color="primary" onClick={handleClose}>
-          Close
-        </Button>
-      </Grid>
-    </Grid>
-  );
+  // // Food waste question modal
+  // const modal4 = (
+  //   <Grid
+  //     container
+  //     direction="column"
+  //     justify="center"
+  //     alignItems="center"
+  //     style={modalStyle}
+  //     className={classes.paper}
+  //   >
+  //     <p id="simple-modal-description">
+  //       Food that is put into landfill generates methane.
+  //     </p>
+  //     <Grid item>
+  //       <Button variant="contained" color="primary" onClick={handleClose}>
+  //         Close
+  //       </Button>
+  //     </Grid>
+  //   </Grid>
+  // );
 
   return (
     <div>

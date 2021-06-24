@@ -67,6 +67,7 @@ export default function Index() {
       </Grid>
     </Grid>
   );
+
   return (
     <div>
       <NavBar />
