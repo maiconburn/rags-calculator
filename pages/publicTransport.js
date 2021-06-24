@@ -70,8 +70,8 @@ export default function PublicTransport() {
             <Slider
               variable="PublicTransport"
               marks={marks}
-              max="1000"
-              step="25"
+              max={1000}
+              step={25}
             />
           </Box>
         </Grid>

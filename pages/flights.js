@@ -67,7 +67,7 @@ export default function Flights() {
         </Grid>
         <Grid item xs={12}>
           <Box my="1rem">
-            <Slider variable="Flights" marks={marks} max="100" step="2" />
+            <Slider variable="Flights" marks={marks} max={100} step={2} />
           </Box>
         </Grid>
         <Grid item xs={12}>
