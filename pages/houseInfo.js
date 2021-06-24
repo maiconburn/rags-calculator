@@ -3,7 +3,6 @@ import NavBar from "../components/NavBar";
 import Stepper from "../components/Steeper";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
@@ -12,6 +11,7 @@ import styles from "../styles/HouseInfo.module.scss";
 export default function houseInfo() {
   const [SourceEnergy, setSourceEnergy] = React.useState();
   const [HouseSize, setHouseSize] = React.useState();
+  const [validationCountdown, setValidationCountdown] = React.useState(2);
 
   const handleSourceEnergy = (event, newSourceEnergy) => {
     setSourceEnergy(newSourceEnergy);
@@ -20,13 +20,6 @@ export default function houseInfo() {
   const handleHouseSize = (event, newHouseSize) => {
     setHouseSize(newHouseSize);
   };
-
-  React.useEffect(() => {
-    window.localStorage.setItem("SourceEnergy", SourceEnergy);
-    window.localStorage.setItem("HouseSize", HouseSize);
-    //const test = window.localStorage.getItem("SourceEnergy");
-    //console.log(test);
-  }, [SourceEnergy, HouseSize]);
 
   return (
     <div>
@@ -139,6 +132,7 @@ export default function houseInfo() {
           <Stepper
             stepsNumber={9}
             actualStep={1}
+            validation={0}
             nextStep="food"
             previousStep="/"
           />
