@@ -53,6 +53,27 @@ const marks = [
   },
 ];
 
+const modal1 = (
+  <Grid
+    container
+    direction="column"
+    justify="center"
+    alignItems="center"
+    style={modalStyle}
+    className={classes.paper}
+  >
+    <p id="simple-modal-description">
+      This is just your personal air miles, e.g. holidays. Don’t include any
+      business travel miles here.
+    </p>
+    <Grid item>
+      <Button variant="contained" color="primary" onClick={handleClose}>
+        Close
+      </Button>
+    </Grid>
+  </Grid>
+);
+
 export default function Flights() {
   return (
     <div>
