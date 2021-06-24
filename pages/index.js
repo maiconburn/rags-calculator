@@ -55,9 +55,10 @@ export default function Index() {
       style={modalStyle}
       className={classes.paper}
     >
-      <h2 id="simple-modal-title">Text in a modal</h2>
       <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+        This will be used to divide your gas, electricity and car usage between
+        each member of the household. If you are at University halls of
+        residence, just 1.
       </p>
       <Grid item>
         <Button variant="contained" color="primary" onClick={handleClose}>
