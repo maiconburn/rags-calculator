@@ -38,7 +38,7 @@ export default function results() {
     PublicTransportImpact +
     FlightsImpact +
     MiscellaneousImpact +
-    1.1;
+    1.1; // UK unavoidable contribution
 
   const HowManyCreditsBuy = TotalCO2.toFixed(0);
 
@@ -120,7 +120,7 @@ export default function results() {
           break;
       }
       const HouseEnergyImpact =
-        Math.round(ElectricEnergyConsumption * 0.000527 * 100) / 100;
+        Math.round(ElectricEnergyConsumption * 0.000309 * 100) / 100;
       const PersonalEnergyImpact = HouseEnergyImpact / peopleHousehold;
 
       setEnergyImpact(PersonalEnergyImpact);
