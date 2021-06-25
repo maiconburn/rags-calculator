@@ -5,6 +5,32 @@ import Typography from "@material-ui/core/Typography";
 import Slider from "../components/Slider";
 import NavBar from "../components/NavBar";
 import Stepper from "../components/Steeper";
+import Modal from "@material-ui/core/Modal";
+import Button from "@material-ui/core/Button";
+import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
+import { makeStyles } from "@material-ui/core/styles";
+
+function getModalStyle() {
+  const top = 50;
+  const left = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: "absolute",
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
 
 const marks = [
   {
@@ -54,26 +80,48 @@ const marks = [
 ];
 
 export default function Flights() {
-  // const modal1 = (
-  //   <Grid
-  //     container
-  //     direction="column"
-  //     justify="center"
-  //     alignItems="center"
-  //     style={modalStyle}
-  //     className={classes.paper}
-  //   >
-  //     <p id="simple-modal-description">
-  //       This is just your personal air miles, e.g. holidays. Don’t include any
-  //       business travel miles here.
-  //     </p>
-  //     <Grid item>
-  //       <Button variant="contained" color="primary" onClick={handleClose}>
-  //         Close
-  //       </Button>
-  //     </Grid>
-  //   </Grid>
-  // );
+  const classes = useStyles();
+  const [modalStyle] = React.useState(getModalStyle);
+  const [modalBody, setModalBody] = React.useState();
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpenModal1 = () => {
+    setModalBody(body1);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const body1 = (
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      spacing={2}
+      style={modalStyle}
+      className={classes.paper}
+    >
+      <Grid item>
+        <Typography
+          variant="body1"
+          align="center"
+          id="simple-modal-description"
+        >
+          This is just your personal air miles, e.g. holidays. Don’t include any
+          business travel miles here.
+        </Typography>
+      </Grid>
+
+      <Grid item>
+        <Button variant="contained" color="primary" onClick={handleClose}>
+          Close
+        </Button>
+      </Grid>
+    </Grid>
+  );
 
   return (
     <div>
@@ -83,6 +131,10 @@ export default function Flights() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               In a normal year, how many hours do you spend flying?
+              <br />
+              <Button onClick={handleOpenModal1}>
+                <HelpOutlineIcon fontSize="small" /> Info
+              </Button>
             </Typography>
           </Box>
         </Grid>
@@ -101,6 +153,14 @@ export default function Flights() {
           />
         </Grid>
       </Grid>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        <>{modalBody}</>
+      </Modal>
     </div>
   );
 }
