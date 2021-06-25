@@ -94,31 +94,6 @@ export default function Food() {
     }
   }, [Miscellaneous, validationPass]);
 
-  // // Miscellaneous spending question
-  // const modal1 = (
-  //   <Grid
-  //     container
-  //     direction="column"
-  //     justify="center"
-  //     alignItems="center"
-  //     style={modalStyle}
-  //     className={classes.paper}
-  //   >
-  //     <p id="simple-modal-description">
-  //       This is more about the amount of items you buy rather than the
-  //       individual cost of each item. If you are a frugal spender, you seriously
-  //       consider each purchase and try to keep consumption to a minimum.
-  //       Conversely, big spenders will buy large volumes of items, for example,
-  //       lots of clothes.
-  //     </p>
-  //     <Grid item>
-  //       <Button variant="contained" color="primary" onClick={handleClose}>
-  //         Close
-  //       </Button>
-  //     </Grid>
-  //   </Grid>
-  // );
-
   return (
     <div>
       <NavBar />
