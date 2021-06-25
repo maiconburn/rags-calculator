@@ -224,8 +224,12 @@ export default function results() {
         break;
     }
 
+    var food_use_fac = (1 + WasteImpact) / 1.25;
+
     setFoodImpact(
-      Math.round(OrganicFoodImpact + MeatImpact + FoodMilesImpact) * WasteImpact
+      Math.round(
+        (OrganicFoodImpact + MeatImpact + FoodMilesImpact) * food_use_fac
+      )
     );
 
     //RecycleImpact calculation
