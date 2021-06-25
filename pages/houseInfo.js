@@ -6,12 +6,56 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
+import Modal from "@material-ui/core/Modal";
+import Button from "@material-ui/core/Button";
+import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
+import { makeStyles } from "@material-ui/core/styles";
 import styles from "../styles/HouseInfo.module.scss";
 
+function getModalStyle() {
+  const top = 50;
+  const left = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: "absolute",
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
+
 export default function houseInfo() {
+  const classes = useStyles();
   const [SourceEnergy, setSourceEnergy] = React.useState();
   const [HouseSize, setHouseSize] = React.useState();
   const [validationPass, setValidationPass] = React.useState(false);
+  const [modalStyle] = React.useState(getModalStyle);
+  const [modalBody, setModalBody] = React.useState();
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpenModal1 = () => {
+    setModalBody(body1);
+    setOpen(true);
+  };
+
+  const handleOpenModal2 = () => {
+    setModalBody(body2);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleSourceEnergy = (event, newSourceEnergy) => {
     setSourceEnergy(newSourceEnergy);
@@ -29,56 +73,69 @@ export default function houseInfo() {
     }
   }, [SourceEnergy, HouseSize, validationPass]);
 
-  // // Gas + electricity question
-  // const modal1 = (
-  //   <Grid
-  //     container
-  //     direction="column"
-  //     justify="center"
-  //     alignItems="center"
-  //     style={modalStyle}
-  //     className={classes.paper}
-  //   >
-  //     <p id="simple-modal-description">
-  //       You produce greenhouse gas emissions when using electricity and gas in
-  //       the home. We will estimate your electricity and gas output using the
-  //       size of your home.
-  //     </p>
-  //     <Grid item>
-  //       <Button variant="contained" color="primary" onClick={handleClose}>
-  //         Close
-  //       </Button>
-  //     </Grid>
-  //   </Grid>
-  // );
+  const body1 = (
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      spacing={2}
+      style={modalStyle}
+      className={classes.paper}
+    >
+      <Grid item>
+        <Typography
+          variant="body1"
+          align="center"
+          id="simple-modal-description"
+        >
+          You produce greenhouse gas emissions when using electricity and gas in
+          the home. We will estimate your electricity and gas output using the
+          size of your home.
+        </Typography>
+      </Grid>
 
-  // // House size question
-  // const modal2 = (
-  //   <Grid
-  //     container
-  //     direction="column"
-  //     justify="center"
-  //     alignItems="center"
-  //     style={modalStyle}
-  //     className={classes.paper}
-  //   >
-  //     <p id="simple-modal-description">
-  //       We measure your estimated electricity and gas output by the number of
-  //       rooms in your home. (small = 1 bedroom, medium = 2–3 bedrooms, large =
-  //       4+ bedrooms)
-  //     </p>
-  //     <Grid item>
-  //       <Button variant="contained" color="primary" onClick={handleClose}>
-  //         Close
-  //       </Button>
-  //     </Grid>
-  //   </Grid>
-  // );
+      <Grid item>
+        <Button variant="contained" color="primary" onClick={handleClose}>
+          Close
+        </Button>
+      </Grid>
+    </Grid>
+  );
+
+  const body2 = (
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      spacing={2}
+      style={modalStyle}
+      className={classes.paper}
+    >
+      <Grid item>
+        <Typography
+          variant="body1"
+          align="center"
+          id="simple-modal-description"
+        >
+          We measure your estimated electricity and gas output by the number of
+          // rooms in your home. (small = 1 bedroom, medium = 2–3 bedrooms,
+          large = // 4+ bedrooms)
+        </Typography>
+      </Grid>
+
+      <Grid item>
+        <Button variant="contained" color="primary" onClick={handleClose}>
+          Close
+        </Button>
+      </Grid>
+    </Grid>
+  );
 
   return (
-    <div>
+    <>
       <NavBar />
-
       <Grid container direction="column" alignItems="center" justify="center">
         <Box my="2rem">
           <Grid
@@ -90,6 +147,10 @@ export default function houseInfo() {
             <Grid item>
               <Typography variant="h5" align="center">
                 What energy sources do you have in your household?
+                <br />
+                <Button onClick={handleOpenModal1}>
+                  <HelpOutlineIcon fontSize="small" /> Info
+                </Button>
               </Typography>
             </Grid>
           </Grid>
@@ -128,6 +189,10 @@ export default function houseInfo() {
             <Grid item>
               <Typography variant="h5" align="center">
                 How big is your home?
+                <br />
+                <Button onClick={handleOpenModal2}>
+                  <HelpOutlineIcon fontSize="small" /> Info
+                </Button>
               </Typography>
             </Grid>
           </Grid>
@@ -192,6 +257,14 @@ export default function houseInfo() {
           />
         </Grid>
       </Grid>
-    </div>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        <>{modalBody}</>
+      </Modal>
+    </>
   );
 }

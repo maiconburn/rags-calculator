@@ -6,13 +6,185 @@ import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import Typography from "@material-ui/core/Typography";
 import Stepper from "../components/Steeper";
+import Modal from "@material-ui/core/Modal";
+import Button from "@material-ui/core/Button";
+import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
+import { makeStyles } from "@material-ui/core/styles";
+
+function getModalStyle() {
+  const top = 50;
+  const left = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: "absolute",
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
 
 export default function Food() {
+  const classes = useStyles();
   const [OrganicFood, setOrganicFood] = React.useState();
   const [Meat, setMeat] = React.useState();
   const [FoodMiles, setFoodMiles] = React.useState();
   const [Waste, setWaste] = React.useState();
   const [validationPass, setValidationPass] = React.useState(false);
+  const [modalStyle] = React.useState(getModalStyle);
+  const [modalBody, setModalBody] = React.useState();
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpenModal1 = () => {
+    setModalBody(body1);
+    setOpen(true);
+  };
+
+  const handleOpenModal2 = () => {
+    setModalBody(body2);
+    setOpen(true);
+  };
+
+  const handleOpenModal3 = () => {
+    setModalBody(body3);
+    setOpen(true);
+  };
+
+  const handleOpenModal4 = () => {
+    setModalBody(body4);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const body1 = (
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      spacing={2}
+      style={modalStyle}
+      className={classes.paper}
+    >
+      <Grid item>
+        <Typography
+          variant="body1"
+          align="center"
+          id="simple-modal-description"
+        >
+          Non-organic foods will output more carbon dioxide into the atmosphere.
+          This is because the fertiliser used to grow non-organic foods requires
+          manufacturing and transporting. There will also be an increase in
+          greenhouse gases through the nitrous oxide released by the fertiliser.
+        </Typography>
+      </Grid>
+
+      <Grid item>
+        <Button variant="contained" color="primary" onClick={handleClose}>
+          Close
+        </Button>
+      </Grid>
+    </Grid>
+  );
+
+  const body2 = (
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      spacing={2}
+      style={modalStyle}
+      className={classes.paper}
+    >
+      <Grid item>
+        <Typography
+          variant="body1"
+          align="center"
+          id="simple-modal-description"
+        >
+          Meat and dairy consumption will increase methane in the atmosphere
+          from the animals and slurry. Carbon dioxide emissions will also be
+          higher from the machinery used to farm the animals.
+        </Typography>
+      </Grid>
+
+      <Grid item>
+        <Button variant="contained" color="primary" onClick={handleClose}>
+          Close
+        </Button>
+      </Grid>
+    </Grid>
+  );
+
+  const body3 = (
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      spacing={2}
+      style={modalStyle}
+      className={classes.paper}
+    >
+      <Grid item>
+        <Typography
+          variant="body1"
+          align="center"
+          id="simple-modal-description"
+        >
+          Less miles travelled by the food will mean less carbon dixoide is
+          released during transport.
+        </Typography>
+      </Grid>
+
+      <Grid item>
+        <Button variant="contained" color="primary" onClick={handleClose}>
+          Close
+        </Button>
+      </Grid>
+    </Grid>
+  );
+
+  const body4 = (
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      spacing={2}
+      style={modalStyle}
+      className={classes.paper}
+    >
+      <Grid item>
+        <Typography
+          variant="body1"
+          align="center"
+          id="simple-modal-description"
+        >
+          Food that is put into landfill generates methane.
+        </Typography>
+      </Grid>
+
+      <Grid item>
+        <Button variant="contained" color="primary" onClick={handleClose}>
+          Close
+        </Button>
+      </Grid>
+    </Grid>
+  );
 
   const handleOrganicFood = (event, newOrganicFood) => {
     setOrganicFood(newOrganicFood);
@@ -42,96 +214,6 @@ export default function Food() {
     }
   }, [OrganicFood, Meat, FoodMiles, Waste, validationPass]);
 
-  // // Organic food question modal
-  // const modal1 = (
-  //   <Grid
-  //     container
-  //     direction="column"
-  //     justify="center"
-  //     alignItems="center"
-  //     style={modalStyle}
-  //     className={classes.paper}
-  //   >
-  //     <p id="simple-modal-description">
-  //       Non-organic foods will output more carbon dioxide into the atmosphere.
-  //       This is because the fertiliser used to grow non-organic foods requires
-  //       manufacturing and transporting. There will also be an increase in
-  //       greenhouse gases through the nitrous oxide released by the fertiliser.
-  //     </p>
-  //     <Grid item>
-  //       <Button variant="contained" color="primary" onClick={handleClose}>
-  //         Close
-  //       </Button>
-  //     </Grid>
-  //   </Grid>
-  // );
-
-  // // Meat/dairy question modal
-  // const modal2 = (
-  //   <Grid
-  //     container
-  //     direction="column"
-  //     justify="center"
-  //     alignItems="center"
-  //     style={modalStyle}
-  //     className={classes.paper}
-  //   >
-  //     <p id="simple-modal-description">
-  //       Meat and dairy consumption will increase methane in the atmosphere from
-  //       the animals and slurry. Carbon dioxide emissions will also be higher
-  //       from the machinery used to farm the animals.
-  //     </p>
-  //     <Grid item>
-  //       <Button variant="contained" color="primary" onClick={handleClose}>
-  //         Close
-  //       </Button>
-  //     </Grid>
-  //   </Grid>
-  // );
-
-  // // Local food question modal
-  // const modal3 = (
-  //   <Grid
-  //     container
-  //     direction="column"
-  //     justify="center"
-  //     alignItems="center"
-  //     style={modalStyle}
-  //     className={classes.paper}
-  //   >
-  //     <p id="simple-modal-description">
-  //       Less miles travelled by the food will mean less carbon dixoide is
-  //       released during transport.
-  //     </p>
-  //     <Grid item>
-  //       <Button variant="contained" color="primary" onClick={handleClose}>
-  //         Close
-  //       </Button>
-  //     </Grid>
-  //   </Grid>
-  // );
-
-  // // Food waste question modal
-  // const modal4 = (
-  //   <Grid
-  //     container
-  //     direction="column"
-  //     justify="center"
-  //     alignItems="center"
-  //     style={modalStyle}
-  //     className={classes.paper}
-  //   >
-  //     <p id="simple-modal-description">
-  //       Food that is put into landfill generates methane.
-  //     </p>
-  //     <Grid item>
-  //       <Button variant="contained" color="primary" onClick={handleClose}>
-  //         Close
-  //       </Button>
-  //     </Grid>
-  //   </Grid>
-  // );
-
   return (
     <div>
       <NavBar />
@@ -140,6 +222,10 @@ export default function Food() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               How much of the food that you eat is organic?
+              <br />
+              <Button onClick={handleOpenModal1}>
+                <HelpOutlineIcon fontSize="small" /> Info
+              </Button>
             </Typography>
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
@@ -168,6 +254,10 @@ export default function Food() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               How often do you eat meat or fish?
+              <br />
+              <Button onClick={handleOpenModal2}>
+                <HelpOutlineIcon fontSize="small" /> Info
+              </Button>
             </Typography>
           </Box>
           <Box my="2rem">
@@ -211,6 +301,10 @@ export default function Food() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               How much of your food is produced locally, i.e., in your county?
+              <br />
+              <Button onClick={handleOpenModal3}>
+                <HelpOutlineIcon fontSize="small" /> Info
+              </Button>
             </Typography>
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
@@ -239,6 +333,10 @@ export default function Food() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               How much of your food goes to landfill?
+              <br />
+              <Button onClick={handleOpenModal4}>
+                <HelpOutlineIcon fontSize="small" /> Info
+              </Button>
             </Typography>
           </Box>
           <Box my="2rem" display="flex" justifyContent="center">
@@ -289,6 +387,14 @@ export default function Food() {
           />
         </Grid>
       </Grid>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        <>{modalBody}</>
+      </Modal>
     </div>
   );
 }

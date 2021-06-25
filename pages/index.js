@@ -56,9 +56,9 @@ export default function Index() {
       className={classes.paper}
     >
       <p id="simple-modal-description">
-        This will be used to divide your gas, electricity and car usage between
-        each member of the household. If you are at University halls of
-        residence, just 1.
+        This will be used to divide your gas, electricity usage between each
+        member of the household. If you are at University halls of residence,
+        just 1.
       </p>
       <Grid item>
         <Button variant="contained" color="primary" onClick={handleClose}>

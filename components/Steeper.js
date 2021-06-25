@@ -35,7 +35,7 @@ export default function Stepper(props) {
 
   return (
     <MobileStepper
-      variant="text"
+      variant="dots"
       steps={props.stepsNumber}
       position="static"
       activeStep={activeStep}
