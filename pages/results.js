@@ -259,7 +259,7 @@ export default function results() {
     var CarsMileageImpact = 0;
 
     switch (CarsMileage) {
-      case "OF-low":
+      case "C-low":
         CarsMileageImpact = 5000;
         break;
       case "C-average":
@@ -389,7 +389,7 @@ export default function results() {
           alignItems="center"
         >
           <Typography variant="h5" align="center">
-            Check out the chart below how your carbon emissions are distributed
+            Check out the chart for a breakdown of your footprint.
           </Typography>
         </Box>
         <Box
