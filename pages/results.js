@@ -38,7 +38,7 @@ export default function results() {
     PublicTransportImpact +
     FlightsImpact +
     MiscellaneousImpact +
-    1.1;
+    1.1; // UK unavoidable contribution
 
   const HowManyCreditsBuy = TotalCO2.toFixed(0);
 
@@ -120,7 +120,7 @@ export default function results() {
           break;
       }
       const HouseEnergyImpact =
-        Math.round(ElectricEnergyConsumption * 0.000527 * 100) / 100;
+        Math.round(ElectricEnergyConsumption * 0.000309 * 100) / 100;
       const PersonalEnergyImpact = HouseEnergyImpact / peopleHousehold;
 
       setEnergyImpact(PersonalEnergyImpact);
@@ -144,7 +144,7 @@ export default function results() {
           break;
       }
       const HouseEnergyImpact =
-        Math.round(ElectricEnergyConsumption * 0.000527 * 100) / 100 +
+        Math.round(ElectricEnergyConsumption * 0.000309 * 100) / 100 +
         Math.round(GasEnergyConsumption * 0.000203 * 100) / 100;
       const PersonalEnergyImpact = HouseEnergyImpact / peopleHousehold;
 
@@ -224,8 +224,12 @@ export default function results() {
         break;
     }
 
+    var food_use_fac = (1 + WasteImpact) / 1.25;
+
     setFoodImpact(
-      Math.round(OrganicFoodImpact + MeatImpact + FoodMilesImpact) * WasteImpact
+      Math.round(
+        (OrganicFoodImpact + MeatImpact + FoodMilesImpact) * food_use_fac
+      )
     );
 
     //RecycleImpact calculation
