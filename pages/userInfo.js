@@ -3,13 +3,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
 import NavBar from "../components/NavBar";
-import Button from "@material-ui/core/Button";
-import EcoIcon from "@material-ui/icons/Eco";
 import Stepper from "../components/Steeper";
 import HubspotForm from "react-hubspot-form";
-import styles from "../styles/UserInfo.module.scss";
+//import TextField from "@material-ui/core/TextField";
+//import Button from "@material-ui/core/Button";
+//import EcoIcon from "@material-ui/icons/Eco";
+//import styles from "../styles/UserInfo.module.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {
