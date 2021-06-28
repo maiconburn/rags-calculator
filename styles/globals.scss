@@ -33,3 +33,8 @@ button.MuiToggleButton-root.Mui-selected {
     border-color: #000 !important;
   }
 }
+
+.Mui-disabled {
+  color: #fff !important;
+  opacity: 0 !important;
+}

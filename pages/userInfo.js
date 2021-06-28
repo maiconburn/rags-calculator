@@ -8,6 +8,7 @@ import NavBar from "../components/NavBar";
 import Button from "@material-ui/core/Button";
 import EcoIcon from "@material-ui/icons/Eco";
 import Stepper from "../components/Steeper";
+import HubspotForm from "react-hubspot-form";
 import styles from "../styles/UserInfo.module.scss";
 
 const useStyles = makeStyles((theme) => ({
@@ -39,13 +40,32 @@ export default function userInfo() {
         </Grid>
         <Grid item xs={12}>
           <Box my="1rem" direction="row" justify="center" alignItems="center">
+            <HubspotForm
+              portalId="20045770"
+              formId="49e69749-ca31-4b4c-9d88-3d823ed45ef0"
+              onSubmit={() => console.log("Submit!")}
+              onReady={(form) => console.log("Form ready!")}
+              loading={<div>Loading...</div>}
+            />
+            {/*
             <form className={classes.root} noValidate autoComplete="off">
-              <Grid item xs={12}>
+              <Grid item xs={6}>
                 <TextField
                   required
                   id="outlined-required"
                   label="Type your full name"
-                  placeholder="Type your name"
+                  name="firstname"
+                  placeholder="Type your first name"
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Type your full name"
+                  name="lastname"
+                  placeholder="Type your last name"
                   variant="outlined"
                 />
               </Grid>
@@ -54,15 +74,16 @@ export default function userInfo() {
                   required
                   id="outlined-required"
                   label="Type your email"
+                  name="email"
                   placeholder="Type your email"
                   variant="outlined"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required
                   id="outlined-required"
                   label="Type your phone number"
+                  name="phone"
                   placeholder="Type your phone number"
                   variant="outlined"
                 />
@@ -80,6 +101,7 @@ export default function userInfo() {
                 </Button>
               </Grid>
             </form>
+            */}
           </Box>
         </Grid>
         <Grid item xs={12}>
