@@ -44,6 +44,7 @@ export default function userInfo() {
               portalId="20045770"
               formId="49e69749-ca31-4b4c-9d88-3d823ed45ef0"
               onSubmit={() => console.log("Submit!")}
+              redirectUrl={process.env.RESULT_URL}
               onReady={(form) => console.log("Form ready!")}
               loading={<div>Loading...</div>}
             />
