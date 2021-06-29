@@ -222,9 +222,8 @@ export default function Food() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               How much of the food that you eat is organic?
-              <br />
               <Button onClick={handleOpenModal1}>
-                <HelpOutlineIcon fontSize="small" /> Info
+                <HelpOutlineIcon fontSize="small" />
               </Button>
             </Typography>
           </Box>
@@ -254,9 +253,8 @@ export default function Food() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               How often do you eat meat or fish?
-              <br />
               <Button onClick={handleOpenModal2}>
-                <HelpOutlineIcon fontSize="small" /> Info
+                <HelpOutlineIcon fontSize="small" />
               </Button>
             </Typography>
           </Box>
@@ -301,9 +299,8 @@ export default function Food() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               How much of your food is produced locally, i.e., in your county?
-              <br />
               <Button onClick={handleOpenModal3}>
-                <HelpOutlineIcon fontSize="small" /> Info
+                <HelpOutlineIcon fontSize="small" />
               </Button>
             </Typography>
           </Box>
@@ -333,9 +330,8 @@ export default function Food() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               How much of your food goes to landfill?
-              <br />
               <Button onClick={handleOpenModal4}>
-                <HelpOutlineIcon fontSize="small" /> Info
+                <HelpOutlineIcon fontSize="small" />
               </Button>
             </Typography>
           </Box>

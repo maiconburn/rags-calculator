@@ -80,9 +80,9 @@ export default function Index() {
             alignItems="center"
           >
             <Typography variant="h4" align="center">
-              How many people are there in your household? <br />
+              How many people are there in your household?
               <Button onClick={handleOpen}>
-                <HelpOutlineIcon fontSize="small" /> Info
+                <HelpOutlineIcon fontSize="small" />
               </Button>
             </Typography>
           </Box>

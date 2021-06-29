@@ -131,9 +131,8 @@ export default function Flights() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               In a normal year, how many hours do you spend flying?
-              <br />
               <Button onClick={handleOpenModal1}>
-                <HelpOutlineIcon fontSize="small" /> Info
+                <HelpOutlineIcon fontSize="small" />
               </Button>
             </Typography>
           </Box>

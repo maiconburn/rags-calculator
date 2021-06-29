@@ -131,9 +131,8 @@ export default function PublicTransport() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               How many miles do you travel on public transport weekly?
-              <br />
               <Button onClick={handleOpenModal1}>
-                <HelpOutlineIcon fontSize="small" /> Info
+                <HelpOutlineIcon fontSize="small" />
               </Button>
             </Typography>
           </Box>

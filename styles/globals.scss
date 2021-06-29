@@ -38,3 +38,10 @@ button.MuiToggleButton-root.Mui-selected {
   color: #fff !important;
   opacity: 0 !important;
 }
+
+.MuiButton-root {
+  min-width: 36px !important;
+  .MuiSvgIcon-root {
+    color: #185d24 !important;
+  }
+}

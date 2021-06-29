@@ -147,9 +147,8 @@ export default function houseInfo() {
             <Grid item>
               <Typography variant="h5" align="center">
                 What energy sources do you have in your household?
-                <br />
                 <Button onClick={handleOpenModal1}>
-                  <HelpOutlineIcon fontSize="small" /> Info
+                  <HelpOutlineIcon fontSize="small" />
                 </Button>
               </Typography>
             </Grid>
@@ -189,9 +188,8 @@ export default function houseInfo() {
             <Grid item>
               <Typography variant="h5" align="center">
                 How big is your home?
-                <br />
                 <Button onClick={handleOpenModal2}>
-                  <HelpOutlineIcon fontSize="small" /> Info
+                  <HelpOutlineIcon fontSize="small" />
                 </Button>
               </Typography>
             </Grid>

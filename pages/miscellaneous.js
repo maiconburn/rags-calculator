@@ -102,9 +102,8 @@ export default function Food() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               How would you describe your overall spending habits?
-              <br />
               <Button onClick={handleOpenModal1}>
-                <HelpOutlineIcon fontSize="small" /> Info
+                <HelpOutlineIcon fontSize="small" />
               </Button>
             </Typography>
           </Box>

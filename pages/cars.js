@@ -111,9 +111,8 @@ export default function Cars() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               What is the average mileage for your cars?
-              <br />
               <Button onClick={handleOpenModal1}>
-                <HelpOutlineIcon fontSize="small" /> Info
+                <HelpOutlineIcon fontSize="small" />
               </Button>
             </Typography>
           </Box>

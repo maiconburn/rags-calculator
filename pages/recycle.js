@@ -139,9 +139,8 @@ export default function Recycle() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               Do you recycle paper, glass and metal?
-              <br />
               <Button onClick={handleOpenModal1}>
-                <HelpOutlineIcon fontSize="small" /> Info
+                <HelpOutlineIcon fontSize="small" />
               </Button>
             </Typography>
           </Box>
@@ -165,9 +164,8 @@ export default function Recycle() {
           <Box my="2rem">
             <Typography variant="h5" align="center">
               Do you recycle plastic?
-              <br />
               <Button onClick={handleOpenModal2}>
-                <HelpOutlineIcon fontSize="small" /> Info
+                <HelpOutlineIcon fontSize="small" />
               </Button>
             </Typography>
           </Box>
