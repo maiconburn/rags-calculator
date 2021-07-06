@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import NavBar from "../components/NavBar";
 import Button from "@material-ui/core/Button";
 import EcoIcon from "@material-ui/icons/Eco";
+import { useTrackingCode } from "react-hubspot-tracking-code-hook";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,6 +30,9 @@ export default function results() {
   const [PublicTransportImpact, setPublicTransportImpact] = React.useState();
   const [FlightsImpact, setFlightsImpact] = React.useState();
   const [MiscellaneousImpact, setMiscellaneousImpact] = React.useState();
+  const { setPathPageView, setTrackEvent } = useTrackingCode();
+
+  setPathPageView("/results");
 
   const TotalCO2 =
     EnergyImpact +
