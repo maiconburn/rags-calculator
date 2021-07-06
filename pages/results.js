@@ -33,6 +33,7 @@ export default function results() {
   const { setPathPageView } = useTrackingCode();
 
   setPathPageView("/results");
+  setContentType("landing-page");
 
   const TotalCO2 =
     EnergyImpact +
