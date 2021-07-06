@@ -30,7 +30,7 @@ export default function results() {
   const [PublicTransportImpact, setPublicTransportImpact] = React.useState();
   const [FlightsImpact, setFlightsImpact] = React.useState();
   const [MiscellaneousImpact, setMiscellaneousImpact] = React.useState();
-  const { setPathPageView, setTrackEvent } = useTrackingCode();
+  const { setPathPageView } = useTrackingCode();
 
   setPathPageView("/results");
 
