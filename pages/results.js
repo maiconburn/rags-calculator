@@ -85,6 +85,10 @@ export default function results() {
   };
 
   React.useEffect(() => {
+    var _hsq = (window._hsq = window._hsq || []);
+    _hsq.push(["setPath", "/results"]);
+    _hsq.push(["trackPageView"]);
+
     const peopleHousehold = window.localStorage.getItem("peopleHousehold");
     const SourceEnergy = window.localStorage.getItem("SourceEnergy");
     const HouseSize = window.localStorage.getItem("HouseSize");
