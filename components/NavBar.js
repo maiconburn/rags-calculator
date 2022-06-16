@@ -36,7 +36,7 @@ export default function NavBar() {
     <div className={classes.grow}>
       <AppBar position="static" className={classes.appbar}>
         <Toolbar>
-          <Button edge="start" color="inherit" href="https://carboncertify.com">
+          <Button edge="start" color="inherit" href="/">
             <img
               src="img/logo.png"
               alt="Rags.eco Logo"
