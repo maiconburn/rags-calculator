@@ -5,10 +5,9 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import NavBar from "../components/NavBar";
 import Stepper from "../components/Steeper";
-import HubspotForm from "react-hubspot-form";
-//import TextField from "@material-ui/core/TextField";
-//import Button from "@material-ui/core/Button";
-//import EcoIcon from "@material-ui/icons/Eco";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import EcoIcon from "@material-ui/icons/Eco";
 //import styles from "../styles/UserInfo.module.scss";
 
 const useStyles = makeStyles((theme) => ({
@@ -40,15 +39,6 @@ export default function userInfo() {
         </Grid>
         <Grid item xs={12}>
           <Box my="1rem" direction="row" justify="center" alignItems="center">
-            <HubspotForm
-              portalId="20045770"
-              formId="49e69749-ca31-4b4c-9d88-3d823ed45ef0"
-              onSubmit={() => console.log("Submit!")}
-              redirectUrl={process.env.RESULT_URL}
-              onReady={(form) => console.log("Form ready!")}
-              loading={<div>Loading...</div>}
-            />
-            {/*
             <form className={classes.root} noValidate autoComplete="off">
               <Grid item xs={6}>
                 <TextField
@@ -102,7 +92,6 @@ export default function userInfo() {
                 </Button>
               </Grid>
             </form>
-            */}
           </Box>
         </Grid>
         <Grid item xs={12}>
