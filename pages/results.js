@@ -43,7 +43,7 @@ export default function results() {
   const HowManyCreditsBuy = TotalCO2.toFixed(0);
 
   const offsetLink =
-    "https://carboncertify.com/?add-to-cart=79&quantity=" + HowManyCreditsBuy;
+    "https://www.carbonfootprint.com/offset.aspx?o=" + HowManyCreditsBuy;
 
   const data = {
     labels: [
